@@ -1,0 +1,1 @@
+::WIKI = Gollum::Wiki.new("/Sites/gollumtest.git", :base_path => "/articles")

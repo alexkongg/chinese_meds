@@ -11,6 +11,8 @@ gem 'RedCloth', require: 'redcloth'
 
 gem 'paperclip'
 
+gem 'gollum'
+
 
 group :development do
   gem 'sqlite3', '1.3.5'
