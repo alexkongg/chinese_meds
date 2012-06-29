@@ -1,35 +1,43 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "chinese-meds", root_path, id: "logo" %>
+    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    		<span class = "icon-bar"></span>
+    		<span class = "icon-bar"></span>
+    		<span class = "icon-bar"></span>
+    		
+    	</a>
+      <a class = "brand" href='/'>Chinese Meds</a>
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <% if signed_in? %>
-          <li id = "fat-menu" class = "dropdown">
-          	<a href='#' class = "dropdown-toggle" data-toggle="dropdown">
-          		Administrator <b class="caret"></b>
-          		</a>
-          		<ul class="dropdown-menu">
-          			<%= link_to "Manage Articles", '#' %>
-                	<%= link_to "Settings", '#' %>
-          <li class="divider"></li>
-                <li>
-                  	<%= link_to "Sign out", '#', method: "delete" %>
-                </li>
-          <% end %>
-            <li><%= link_to "All Articles", '#' %></li>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Find Article <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "by Status", '#' %></li>
-                <li><%= link_to "Random Article", '#' %></li>
-              </ul>
-            </li>
-          
-        </ul>
+      	<div class = "nav-collapse">
+	        <ul class="nav nav-pills pull-right">
+	          <li class="active"><a href = '#'>Search</a></li>
+	          <% if signed_in? %>
+	          	<li class = "dropdown">
+	          		<a class = "dropdown-toggle" data-toggle="dropdown" href='#'>
+	          		Administrator <b class="caret"></b>
+	          		</a>
+	          		<ul class="dropdown-menu">
+	          			<li><%= link_to "New Article", new_article_path%></li>
+	          			<li><%= link_to "Manage Articles", articles_path %></li>
+	                	<li><%= link_to "Settings", edit_admin_path(current_admin) %> </li>
+	          			<li class="divider"></li>
+	                	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+	               </ul>
+	            </li>
+	          <% end %>
+	            <li><%= link_to "All Articles", articles_path %></li>
+	            <li id="fat-menu" class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	                Browse<b class="caret"></b>
+	              </a>
+	              <ul class="dropdown-menu">
+	                <li><%= link_to "by Status", '#' %></li>
+	                <li><%= link_to "Random Article", '#' %></li>
+	              </ul>
+            	</li>
+        	</ul>
+        </div>
       </nav>
     </div>
   </div>

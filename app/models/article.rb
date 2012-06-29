@@ -12,4 +12,10 @@
 
 class Article < ActiveRecord::Base
   attr_accessible :content, :description, :title
+  
+  validates :content, presence: true
+  validates :title, presence: true, length: { maximum: 140 }
+  validates :description, presence: true, length: { maximum: 400 }
+  
+  default_scope order: 'articles.title'
 end

@@ -1,8 +1,14 @@
 class ArticlesController < ApplicationController
+  before_filter :signed_in_admin, only: [:destroy, :edit, :update, ]
+  
+  
   # GET /articles
   # GET /articles.json
+  
+  
   def index
-    @articles = Article.all
+    
+    @articles = Article.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +30,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   # GET /articles/new.json
   def new
+    @admin = current_admin
     @article = Article.new
 
     respond_to do |format|

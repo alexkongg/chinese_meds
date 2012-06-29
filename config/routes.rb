@@ -2,12 +2,13 @@ ChineseMeds::Application.routes.draw do
   
 
   resources :admins
-  
+  resources :articles, only: [:new, :create, :destroy, :edit, :update]
   
   resources :sessions, only: [:new, :create, :destroy]
 
   root :to => "static_pages#home"
   
+  match '/articles',         to: "articles#index"
   match '/signup',           to: "admins#new"
   match '/signin',           to: "sessions#new"
   match '/signout',          to: "sessions#destroy", via: :delete

@@ -1,1 +1,14 @@
-<% provide(:title, 'Home') %>
+<div class="center hero-unit">
+  <h1>Welcome to Chinese-Med</h1>
+
+  <h2>
+    Chinese-Med comprises of academic literature on herbs, extracts, teas, and health supplements.
+  </h2>
+
+  
+                              
+  <%= image_tag("chinesemeds.jpg", alt: "ChineseMeds") %>
+  <br>
+  <%= link_to "View all articles", articles_path, 
+                              class: "btn btn-large btn-primary" %>
+</div>

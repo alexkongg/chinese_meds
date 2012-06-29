@@ -1,27 +1,23 @@
-<h1>Listing articles</h1>
+<% provide(:title, 'All articles')%>
+<h1>All Articles (<%= @articles.count %>)</h1>
+<%= will_paginate %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td><%= article.content %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+<ul class="articles">
+	<% @articles.each do |article| %>
+    	<li><%= link_to article.title, article %></li>
+    	<li>   <%= article.description %></li>
+    	<span class = "timestamp">Submitted <%= article.created_at %>.</span>
+    	<% if signed_in? %>
+    		<li> 
+    			<%= link_to 'Edit', edit_article_path(article) %> 
+    			<%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %> </li>
+    	<% end %>
+    	<br>
+    <% end %>
+</ul>
 
-<%= link_to 'New Article', new_article_path %>
+
+
+<%= will_paginate %>
