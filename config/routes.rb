@@ -2,7 +2,7 @@ ChineseMeds::Application.routes.draw do
   
 
   resources :admins
-  resources :articles, only: [:new, :create, :destroy, :edit, :update]
+  resources :articles, only: [:new, :create, :destroy, :edit, :update, :show, :index]
   
   resources :sessions, only: [:new, :create, :destroy]
 

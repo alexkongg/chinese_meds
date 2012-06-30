@@ -1,20 +1,44 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "#{@article.title}") %>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<div class="article-display">
+	<div class="tabbable">
+		
+		<ul class="nav nav-tabs pull-right">
+			<li class="active">
+				<a href="#tab1" data-toggle="tab">Read</a>
+			</li>
+			<li><a href="#tab2" data-toggle="tab">Edit</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+				<br><br>
+				<div class="article-body">
+				<h1><%= @article.title %></h1>
+				<p><%= raw @article.rendered_description%></p>
+				<p><%= raw @article.rendered_content%></p>
+				</div>
+			</div>
+			<div class="tab-pane" id="tab2">
+				<p><%= render 'form' %></p>
+			</div>
+		</div>
+	</div>
+			
+		
+	 
+	
+	
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @article.description %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @article.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<ul class="breadcrumb">
+	<li>
+		<a href='/'>Chinese-Meds Home</a> <span class="divider">/</span>
+	</li>
+	<li>
+		<a href='/articles'>All Articles</a> <span class="divider">/</span>
+	</li>
+	<li class="active">
+		<%= @article.title %>
+	</li>
+</ul>

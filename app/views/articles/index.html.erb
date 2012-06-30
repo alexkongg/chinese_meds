@@ -1,19 +1,25 @@
-<% provide(:title, 'All articles')%>
-<h1>All Articles (<%= @articles.count %>)</h1>
+<% provide(:title, 'All Articles')%>
+<h1>All Articles (<%= @articles.count %>) </h1>
+
+
 <%= will_paginate %>
 
 
 
 <ul class="articles">
 	<% @articles.each do |article| %>
-    	<li><%= link_to article.title, article %></li>
-    	<li>   <%= article.description %></li>
-    	<span class = "timestamp">Submitted <%= article.created_at %>.</span>
-    	<% if signed_in? %>
-    		<li> 
-    			<%= link_to 'Edit', edit_article_path(article) %> 
-    			<%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %> </li>
-    	<% end %>
+		<div class="hero-unit">
+	    	<li><%= link_to article.title, article %></li>
+	    	
+	    	<span class = "timestamp">Submitted <%= article.created_at %>.</span>
+	    	<% if signed_in? %>
+	    		<div class="btn-group">
+	    		
+	    			<button class="btn>"><%= link_to 'Edit', edit_article_path(article) %> </button> 
+	    			<button class="btn>"><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %> </button>
+	    		</div>
+   		</div>	
+    		<% end %>
     	<br>
     <% end %>
 </ul>
@@ -21,3 +27,18 @@
 
 
 <%= will_paginate %>
+
+
+<div class="btn-group">
+	<button class="btn"><a href="/articles/new">New Article</a></button>
+</div>
+<br><br>
+<ul class="breadcrumb">
+	<li>
+		<a href='/'>Chinese-Meds Home</a> <span class="divider">/</span>
+	</li>
+	<li class="active">
+		All Articles
+	</li>
+	
+</ul>
