@@ -1,0 +1,39 @@
+<h1>New Herb</h1>
+
+<%= render 'stylemodal'%>
+<br>
+<br>
+
+<%= form_for(@herb) do |f| %>
+  <%= render 'shared/form_error' %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :ailment %><br />
+    <%= f.text_field :ailment %>
+  </div>
+  <div class="field">
+  	
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+   
+    
+  </div>
+  <div class="field">
+  	
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+    
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
+
+
+

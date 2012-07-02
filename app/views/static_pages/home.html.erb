@@ -1,22 +1,26 @@
-<div class="center hero-unit">
-  <h1>Welcome to</h1>
-	<%= image_tag("chinesemeds.jpeg", alt: "ChineseMeds") %>
-  <h2>
-    Hundreds of articles and citations on Chinese medicine, herbs, extracts, teas, health supplements, and more.
-  </h2>
-
-  
-                              
-  
-  <br>
-  <%= link_to "View all articles", articles_path, 
-                              class: "btn btn-large btn-primary" %>
+<div class="row">
+	<div class="span8 offset2">
+		<div class="center hero-unit">
+		  <h1>Welcome to</h1>
+			<%= image_tag("chinesemeds.jpeg", alt: "ChineseMeds") %>
+		  <h2>
+		    Vault containing hundreds of articles and citations on Chinese medicine, herbs, extracts, teas, health supplements, and more.
+		  </h2>
+		
+		  
+		                              
+		  
+		  <br>
+		  <%= link_to "View All Herbs", herbs_path, 
+		                              class: "btn btn-large btn-primary" %>
+		</div>
+	</div>
+</div>	
+<div class="row">
+	<br><br>
+	<ul class="breadcrumb">
+		<li class="active">
+			<a><i class="icon-home"></i> Chinese-Meds Home</a>
+		
+	</ul>
 </div>
-
-
-<br><br>
-<ul class="breadcrumb">
-	<li class="active">
-		<a>Chinese-Meds Home</a>
-	
-</ul>

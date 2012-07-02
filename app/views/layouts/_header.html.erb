@@ -18,22 +18,21 @@
 	          		Administrator <b class="caret"></b>
 	          		</a>
 	          		<ul class="dropdown-menu">
-	          			<li><%= link_to "New Article", new_article_path%></li>
-	          			<li><%= link_to "Manage Articles", articles_path %></li>
+	          			<li><%= link_to "New Herb", new_herb_path%></li>
 	                	<li><%= link_to "Settings", edit_admin_path(current_admin) %> </li>
 	          			<li class="divider"></li>
 	                	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
 	               </ul>
 	            </li>
 	          <% end %>
-	            <li><%= link_to "All Articles", articles_path %></li>
+	            <li><%= link_to "All Herbs", herbs_path %></li>
 	            <li id="fat-menu" class="dropdown">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                Browse<b class="caret"></b>
 	              </a>
 	              <ul class="dropdown-menu">
 	                <li><%= link_to "by Status", '#' %></li>
-	                <li><%= link_to "Random Article", '#' %></li>
+	                <li><%= link_to "Random herb", '#' %></li>
 	              </ul>
             	</li>
         	</ul>

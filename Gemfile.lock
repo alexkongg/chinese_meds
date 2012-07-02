@@ -49,6 +49,7 @@ GEM
       multi_json (~> 1.0)
     faker (1.0.1)
       i18n (~> 0.4)
+    has_permalink (0.1.4)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -63,6 +64,9 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     nokogiri (1.5.5-x86-mingw32)
+    paper_trail (2.6.3)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     pg (0.12.2-x86-mingw32)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
@@ -125,8 +129,10 @@ DEPENDENCIES
   bootstrap-will_paginate
   coffee-rails (= 3.2.2)
   faker (= 1.0.1)
+  has_permalink
   jquery-rails (= 2.0.0)
   nokogiri
+  paper_trail
   pg (= 0.12.2)
   pygmentize
   rails (= 3.2.3)

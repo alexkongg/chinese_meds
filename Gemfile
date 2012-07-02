@@ -10,6 +10,9 @@ gem 'nokogiri'
 gem 'redcarpet'
 gem 'albino'
 gem 'pygmentize'
+gem 'has_permalink'
+gem 'paper_trail' # Have not implemented yet
+
 
 
 group :development do
