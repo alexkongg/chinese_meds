@@ -12,6 +12,7 @@ gem 'albino'
 gem 'pygmentize'
 gem 'has_permalink'
 gem 'paper_trail' # Have not implemented yet
+gem 'capistrano'
 
 
 
