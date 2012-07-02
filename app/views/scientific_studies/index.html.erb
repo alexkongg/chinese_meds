@@ -1,0 +1,48 @@
+<% provide(:title, 'All Scientific Study Articles')%>
+<h1>All Scientific Study Articles (<%= @scientific_studies.count %>) </h1>
+
+<div class="row">
+	<div class="span8 offset2">
+		<%= will_paginate %>
+		
+		
+		
+		<ul class="scientific_studies">
+			<% @scientific_studies.each do |scientific_study| %>
+				<div class="hero-unit">
+			    	<li><%= link_to scientific_study.title, scientific_study_path(scientific_study) %></li>
+			    	
+			    	<span class = "timestamp">Submitted <%= scientific_study.created_at %>.</span>
+			    	<% if signed_in? %>
+			    		<div class="btn-group">
+			    		
+			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_scientific_study_path(scientific_study) %> </button> 
+			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', scientific_study, confirm: 'Are you sure?', method: :delete %> </button>
+			    		</div>
+		   		</div>	
+		    		<% end %>
+		    	<br>
+		    <% end %>
+		</ul>
+		
+		
+		
+		<%= will_paginate %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group">
+		<button class="btn"><a href="/scientific_studies/new">New Scientific Study Article</a></button>
+	</div>
+	<br><br>
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-book"></i> All Scientific Study Articles
+		</li>
+		
+	</ul>
+</div>

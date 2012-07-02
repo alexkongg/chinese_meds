@@ -1,17 +1,22 @@
 ChineseMeds::Application.routes.draw do
-  
+
 
   resources :admins
-  resources :herbs, only: [:new, :create, :destroy, :edit, :update, :show]
-  
+  resources :herbs
+  resources :tcms
+  resources :food_therapies
+  resources :moxibustions
+  resources :acupunctures
+  resources :cuppings
+  resources :scientific_studies
   resources :sessions, only: [:new, :create, :destroy]
 
   root :to => "static_pages#home"
   
-  match '/herbs',            to: "herbs#index"
-  match '/signup',           to: "admins#new"
-  match '/signin',           to: "sessions#new"
-  match '/signout',          to: "sessions#destroy", via: :delete
+
+  match '/signup',            to: "admins#new"
+  match '/signin',            to: "sessions#new"
+  match '/signout',           to: "sessions#destroy", via: :delete
 
   
   match '/about',            to: "static_pages#about"

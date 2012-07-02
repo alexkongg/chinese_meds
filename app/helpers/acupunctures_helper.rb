@@ -1,0 +1,2 @@
+module AcupuncturesHelper
+end

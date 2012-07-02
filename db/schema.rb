@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702042207) do
+ActiveRecord::Schema.define(:version => 20120702073119) do
+
+  create_table "acupunctures", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "acupunctures", ["permalink"], :name => "index_acupunctures_on_permalink"
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -25,6 +36,28 @@ ActiveRecord::Schema.define(:version => 20120702042207) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["remember_token"], :name => "index_admins_on_remember_token"
 
+  create_table "cuppings", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "cuppings", ["permalink"], :name => "index_cuppings_on_permalink"
+
+  create_table "food_therapies", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "food_therapies", ["permalink"], :name => "index_food_therapies_on_permalink"
+
   create_table "herbs", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -36,6 +69,41 @@ ActiveRecord::Schema.define(:version => 20120702042207) do
     t.string   "permalink"
     t.string   "ailment"
   end
+
+  create_table "moxibustions", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "moxibustions", ["permalink"], :name => "index_moxibustions_on_permalink"
+
+  create_table "scientific_studies", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "scientific_studies", ["permalink"], :name => "index_scientific_studies_on_permalink"
+
+  create_table "tcms", :force => true do |t|
+    t.string   "title"
+    t.string   "book"
+    t.text     "content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "permalink"
+    t.string   "rendered_content"
+  end
+
+  add_index "tcms", ["book"], :name => "index_tcms_on_book"
+  add_index "tcms", ["permalink"], :name => "index_tcms_on_permalink"
 
   create_table "versions", :force => true do |t|
     t.integer  "versioned_id"
@@ -57,32 +125,5 @@ ActiveRecord::Schema.define(:version => 20120702042207) do
   add_index "versions", ["user_id", "user_type"], :name => "index_versions_on_user_id_and_user_type"
   add_index "versions", ["user_name"], :name => "index_versions_on_user_name"
   add_index "versions", ["versioned_id", "versioned_type"], :name => "index_versions_on_versioned_id_and_versioned_type"
-
-  create_table "wiki_page_versions", :force => true do |t|
-    t.integer  "page_id",    :null => false
-    t.integer  "updator_id"
-    t.integer  "number"
-    t.string   "comment"
-    t.string   "path"
-    t.string   "title"
-    t.text     "content"
-    t.datetime "updated_at"
-  end
-
-  add_index "wiki_page_versions", ["page_id"], :name => "index_wiki_page_versions_on_page_id"
-  add_index "wiki_page_versions", ["updator_id"], :name => "index_wiki_page_versions_on_updator_id"
-
-  create_table "wiki_pages", :force => true do |t|
-    t.integer  "creator_id"
-    t.integer  "updator_id"
-    t.string   "path"
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "wiki_pages", ["creator_id"], :name => "index_wiki_pages_on_creator_id"
-  add_index "wiki_pages", ["path"], :name => "index_wiki_pages_on_path", :unique => true
 
 end

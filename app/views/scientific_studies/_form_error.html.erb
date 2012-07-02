@@ -1,0 +1,13 @@
+<% if @scientific_study.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(@scientific_study.errors.count, "error") %>
+    </div>
+    <ul>
+    <% @scientific_study.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %> </li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+   

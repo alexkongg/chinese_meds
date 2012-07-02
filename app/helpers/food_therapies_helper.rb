@@ -1,0 +1,2 @@
+module FoodTherapiesHelper
+end

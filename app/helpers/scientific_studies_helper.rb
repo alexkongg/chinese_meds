@@ -1,0 +1,2 @@
+module ScientificStudiesHelper
+end

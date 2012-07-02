@@ -1,5 +1,5 @@
 class HerbsController < ApplicationController
-  before_filter :signed_in_admin, only: [:destroy, :edit, :update, ]
+  before_filter :signed_in_admin, only: [:destroy, :edit, :update]
   
   
   # GET /herbs

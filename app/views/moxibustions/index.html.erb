@@ -1,0 +1,48 @@
+<% provide(:title, 'All Moxibustion Articles')%>
+<h1>All Moxibustion Articles (<%= @moxibustions.count %>) </h1>
+
+<div class="row">
+	<div class="span8 offset2">
+		<%= will_paginate %>
+		
+		
+		
+		<ul class="moxibustions">
+			<% @moxibustions.each do |moxibustion| %>
+				<div class="hero-unit">
+			    	<li><%= link_to moxibustion.title, moxibustion_path(moxibustion) %></li>
+			    	
+			    	<span class = "timestamp">Submitted <%= moxibustion.created_at %>.</span>
+			    	<% if signed_in? %>
+			    		<div class="btn-group">
+			    		
+			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_moxibustion_path(moxibustion) %> </button> 
+			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', moxibustion, confirm: 'Are you sure?', method: :delete %> </button>
+			    		</div>
+		   		</div>	
+		    		<% end %>
+		    	<br>
+		    <% end %>
+		</ul>
+		
+		
+		
+		<%= will_paginate %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group">
+		<button class="btn"><a href="/moxibustions/new">New Moxibustion Article</a></button>
+	</div>
+	<br><br>
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-book"></i> All Moxibustion Articles
+		</li>
+		
+	</ul>
+</div>

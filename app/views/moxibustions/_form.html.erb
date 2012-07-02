@@ -1,0 +1,29 @@
+<h1>New Moxibustion Article</h1>
+
+<%= render 'stylemodal'%>
+<br>
+<br>
+
+<%= form_for(@moxibustion) do |f| %>
+  <%= render 'form_error' %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+  	
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+    
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
+
+
+

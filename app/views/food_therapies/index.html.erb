@@ -1,0 +1,48 @@
+<% provide(:title, 'All Food Therapy Articles')%>
+<h1>All Food Therapy Articles (<%= @food_therapies.count %>) </h1>
+
+<div class="row">
+	<div class="span8 offset2">
+		<%= will_paginate %>
+		
+		
+		
+		<ul class="food_therapies">
+			<% @food_therapies.each do |food_therapy| %>
+				<div class="hero-unit">
+			    	<li><%= link_to food_therapy.title, food_therapy_path(food_therapy) %></li>
+			    	
+			    	<span class = "timestamp">Submitted <%= food_therapy.created_at %>.</span>
+			    	<% if signed_in? %>
+			    		<div class="btn-group">
+			    		
+			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_food_therapy_path(food_therapy) %> </button> 
+			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', food_therapy, confirm: 'Are you sure?', method: :delete %> </button>
+			    		</div>
+		   		</div>	
+		    		<% end %>
+		    	<br>
+		    <% end %>
+		</ul>
+		
+		
+		
+		<%= will_paginate %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group">
+		<button class="btn"><a href="/food_therapies/new">New Food Therapy Article</a></button>
+	</div>
+	<br><br>
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-book"></i> All Food Therapy Articles
+		</li>
+		
+	</ul>
+</div>

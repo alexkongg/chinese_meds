@@ -1,0 +1,48 @@
+<% provide(:title, 'All Acupuncture Articles')%>
+<h1>All Acupuncture Articles (<%= @acupunctures.count %>) </h1>
+
+<div class="row">
+	<div class="span8 offset2">
+		<%= will_paginate %>
+		
+		
+		
+		<ul class="acupunctures">
+			<% @acupunctures.each do |acupuncture| %>
+				<div class="hero-unit">
+			    	<li><%= link_to acupuncture.title, acupuncture_path(acupuncture) %></li>
+			    	
+			    	<span class = "timestamp">Submitted <%= acupuncture.created_at %>.</span>
+			    	<% if signed_in? %>
+			    		<div class="btn-group">
+			    		
+			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_acupuncture_path(acupuncture) %> </button> 
+			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', acupuncture, confirm: 'Are you sure?', method: :delete %> </button>
+			    		</div>
+		   		</div>	
+		    		<% end %>
+		    	<br>
+		    <% end %>
+		</ul>
+		
+		
+		
+		<%= will_paginate %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group">
+		<button class="btn"><a href="/acupunctures/new">New Acupuncture Article</a></button>
+	</div>
+	<br><br>
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-book"></i> All Acupuncture Articles
+		</li>
+		
+	</ul>
+</div>

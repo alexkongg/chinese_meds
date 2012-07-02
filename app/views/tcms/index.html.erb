@@ -1,0 +1,48 @@
+<% provide(:title, 'All TCM Articles')%>
+<h1>All TCM Articles (<%= @tcms.count %>) </h1>
+
+<div class="row">
+	<div class="span8 offset2">
+		<%= will_paginate %>
+		
+		
+		
+		<ul class="tcms">
+			<% @tcms.each do |tcm| %>
+				<div class="hero-unit">
+			    	<li><%= link_to tcm.title, tcm_path(tcm) %></li>
+			    	
+			    	<span class = "timestamp">Submitted <%= tcm.created_at %>.</span>
+			    	<% if signed_in? %>
+			    		<div class="btn-group">
+			    		
+			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_tcm_path(tcm) %> </button> 
+			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', tcm, confirm: 'Are you sure?', method: :delete %> </button>
+			    		</div>
+		   		</div>	
+		    		<% end %>
+		    	<br>
+		    <% end %>
+		</ul>
+		
+		
+		
+		<%= will_paginate %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group">
+		<button class="btn"><a href="/tcmsnew">New TCM Article</a></button>
+	</div>
+	<br><br>
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-book"></i> All TCM Articles
+		</li>
+		
+	</ul>
+</div>
