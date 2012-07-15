@@ -1,5 +1,6 @@
-<h1>Editing Herb</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @herb %> |
+<% provide(:title, "#{@herb.title}") %>
+<div class="row">
+    <div class="span10">
+        <%= render 'form' %>
+    </div>
+ </div>

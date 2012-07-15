@@ -1,38 +1,46 @@
 <% provide(:title, "#{@herb.title}") %>
 
-	
-		<div class="row">
-			<div class="span2">
-				<br>
-				<br>
-				<h4><%= @herb.title %></h4>
-			</div>
-			<div class="span10">
-				<div class="tabbable">
-					
-					<ul class="nav nav-tabs pull-right">
-						<li class="active">
-							<a href="#tab1" data-toggle="tab">Read</a>
-						</li>
-						<li><a href="#tab2" data-toggle="tab">Edit</a>
-						</li>
-					</ul>
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab1">
-							<br><br>
-							<div class="article-body">
-							<h1><%= @herb.title %></h1>
+<br><br>
+<div class="row-fluid">
+	<div class="span2" id="herbShowAilment">
+		<br>
+		<br>
+		<h4><%= @herb.title %></h4>
+		<br>
+		<ul>
+			<li><%= @herb.ailment%></li>
+		</ul>
+	</div>
+	<div class="span10" id="herbShow">
+		<div class="tabbable">
+			
+			<ul class="nav nav-tabs pull-right" id="herb-nav">
+				<li class="active">
+					<a href="#tab1" data-toggle="tab">Read</a>
+				</li>
+				<li>
+					<a href="#tab2" data-toggle="tab">Edit</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="tab1">
+					<br><br>
+					<div class="article-body">
+					<h1 id ="firstHeading"><%= @herb.title %></h1>
+						<br><br>
+						<div id="bodyContent">
 							<p><%= raw @herb.rendered_description%></p>
 							<p><%= raw @herb.rendered_content%></p>
-							</div>
-						</div>
-						<div class="tab-pane" id="tab2">
-							<p><%= render 'form' %></p>
 						</div>
 					</div>
 				</div>
+				<div class="tab-pane" id="tab2">
+					<p><%= render 'form' %></p>
+				</div>
 			</div>
 		</div>
+	</div>
+</div>
 	
 						
 					
@@ -40,17 +48,19 @@
 				
 				
 	
-	<div class="row">
-		<ul class="breadcrumb">
-			<li>
-				<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
-			</li>
-			<li>
-				<a href='/herbs'><i class="icon-book"></i> All Herbs</a> <span class="divider">/</span>
-			</li>
-			<li class="active">
-				<i class="icon-leaf"></i> <%= @herb.title %>
-			</li>
-		</ul>
+<div class="row">
+	<div class="span12">
+	<ul class="breadcrumb">
+		<li>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+		</li>
+		<li>
+			<a href='/herbs'><i class="icon-book"></i> All Herbs</a> <span class="divider">/</span>
+		</li>
+		<li class="active">
+			<i class="icon-leaf"></i> <%= @herb.title %>
+		</li>
+	</ul>
 	</div>
+</div>
 

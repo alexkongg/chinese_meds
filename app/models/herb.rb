@@ -15,6 +15,7 @@ class Herb < ActiveRecord::Base
   attr_accessible :content, :description, :title, :rendered_description, :rendered_content, :ailment
   has_permalink 
 
+  self.per_page = 10
   
   validates :content, presence: true
   validates :title, presence: true, length: { maximum: 140 }

@@ -1,29 +1,42 @@
 <% provide(:title, 'All Herbs')%>
-<h1>All Herbs (<%= @herbs.count %>) </h1>
+<h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
 
 <div class="row">
-	<div class="span8 offset2">
+	<div class="span10 offset2" id="allHerbs">
 		<%= will_paginate %>
 		
 		
 		
-		<ul class="herbs">
-			<% @herbs.each do |herb| %>
-				<div class="hero-unit">
-			    	<li><%= link_to herb.title, herb_path(herb) %></li>
-			    	
-			    	<span class = "timestamp">Submitted <%= herb.created_at %>.</span>
-			    	<% if signed_in? %>
-			    		<div class="btn-group">
-			    		
-			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_herb_path(herb) %> </button> 
-			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', herb, confirm: 'Are you sure?', method: :delete %> </button>
-			    		</div>
-		   		</div>	
-		    		<% end %>
-		    	<br>
-		    <% end %>
-		</ul>
+			<ul class="herbs">
+				<% @herbs.each do |herb| %>
+					
+				    <li>
+					    
+					    	<%= link_to herb.title, herb_path(herb) %>
+					                      
+					    <span class = "timestamp">Submitted <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.</span>
+					    <% if signed_in? %>
+					    	<div class="btn-group">
+					    		
+						    	<button class="btn">
+						    		<i class="icon-edit"></i> 
+						   			<%= link_to 'Edit', edit_herb_path(herb) %> 
+						   		</button>
+						   		
+						   		<button class="btn">
+					    			<i class="icon-trash"></i> 
+					    			<%= link_to 'Destroy', herb, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete %> 
+					    		</button>
+					    	</div>
+					    	
+				   		
+				    	<% end %>
+				    	
+			    	</li>
+			    	<br>
+			    <% end %>
+			</ul>
+		
 		
 		
 		
