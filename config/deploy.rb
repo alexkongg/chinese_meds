@@ -10,7 +10,7 @@ set :user, "ubuntu"
 
 role :web, "chinese-meds.com"                          # Your HTTP server, Apache/etc
 role :app, "chinese-meds.com"                          # This may be the same as your `Web` server
-role :db,  "chinese-meds.com", :primary => true # This is where Rails migrations will run
+role :db,  "chinese-meds.com", :primary => true # this is where Rails migrations will run
 
 
 # if you want to clean up old releases on each deploy uncomment this:
