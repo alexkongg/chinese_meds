@@ -2,7 +2,7 @@
 <h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
 
 <div class="row">
-	<div class="span10 offset2" id="allHerbs">
+	<div class="span10 offset3" id="allHerbs">
 		<%= will_paginate %>
 		
 		
@@ -14,7 +14,7 @@
 					    
 					    	<%= link_to herb.title, herb_path(herb) %>
 					                      
-					    <span class = "timestamp">Submitted <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.</span>
+					    <span class = "timestamp">Checked in <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.</span>
 					    <% if signed_in? %>
 					    	<div class="btn-group">
 					    		
@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="btn-group">
 		<button class="btn"><a href="/herbs/new">New Herb</a></button>
 	</div>

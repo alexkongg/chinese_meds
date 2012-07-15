@@ -2,6 +2,10 @@
 <h1>All Scientific Study Articles (<%= @scientific_studies.count %>) </h1>
 
 <div class="row">
+	<div class="span4 offset6"><h2>Coming Soon!</h2></div>
+</div>
+
+<div class="row-fluid">
 	<div class="span8 offset2">
 		<%= will_paginate %>
 		
@@ -31,7 +35,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="btn-group">
 		<button class="btn"><a href="/scientific_studies/new">New Scientific Study Article</a></button>
 	</div>

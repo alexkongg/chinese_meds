@@ -1,6 +1,11 @@
 <% provide(:title, 'All Cupping Articles')%>
 <h1>All Cupping Articles (<%= @cuppings.count %>) </h1>
 
+
+<div class="row">
+	<div class="span4 offset6"><h2>Coming Soon!</h2></div>
+</div>
+
 <div class="row">
 	<div class="span8 offset2">
 		<%= will_paginate %>
@@ -31,7 +36,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="btn-group">
 		<button class="btn"><a href="/cuppings/new">New Cupping Article</a></button>
 	</div>

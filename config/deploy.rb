@@ -2,8 +2,14 @@
 set :application, "chinese_meds"
 set :repository,  "git@github.com:alexkongg/chinese_meds.git"
 
+
+# set :scm_command, "/opt/local/bin/git" 
+# set :local_scm_command, "git" 
+
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+
+
 set :deploy_to, "/chinese_meds"
 set :user, "ubuntu"
 
