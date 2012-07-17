@@ -1,4 +1,4 @@
-class AddPermalinkToMoxibustion < ActiveRecord::Migration
+class AddPermalinkToMoxibustions < ActiveRecord::Migration
   def self.up
     add_column :moxibustions, :permalink, :string
     add_index :moxibustions, :permalink

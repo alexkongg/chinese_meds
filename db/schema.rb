@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702073119) do
+ActiveRecord::Schema.define(:version => 20120702071708) do
 
   create_table "acupunctures", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "rendered_content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "acupunctures", ["permalink"], :name => "index_acupunctures_on_permalink"
@@ -36,13 +36,23 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["remember_token"], :name => "index_admins_on_remember_token"
 
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.text     "rendered_description"
+    t.text     "rendered_content"
+  end
+
   create_table "cuppings", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "rendered_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "cuppings", ["permalink"], :name => "index_cuppings_on_permalink"
@@ -50,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
   create_table "food_therapies", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "rendered_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "food_therapies", ["permalink"], :name => "index_food_therapies_on_permalink"
@@ -62,21 +72,25 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
     t.string   "title"
     t.text     "description"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.text     "rendered_description"
     t.text     "rendered_content"
     t.string   "permalink"
     t.string   "ailment"
   end
 
+  add_index "herbs", ["created_at"], :name => "index_herbs_on_created_at"
+  add_index "herbs", ["permalink"], :name => "index_herbs_on_permalink"
+  add_index "herbs", ["title"], :name => "index_herbs_on_title"
+
   create_table "moxibustions", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "rendered_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "moxibustions", ["permalink"], :name => "index_moxibustions_on_permalink"
@@ -84,10 +98,10 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
   create_table "scientific_studies", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "rendered_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "scientific_studies", ["permalink"], :name => "index_scientific_studies_on_permalink"
@@ -96,34 +110,13 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
     t.string   "title"
     t.string   "book"
     t.text     "content"
+    t.text     "rendered_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "permalink"
-    t.string   "rendered_content"
   end
 
   add_index "tcms", ["book"], :name => "index_tcms_on_book"
   add_index "tcms", ["permalink"], :name => "index_tcms_on_permalink"
-
-  create_table "versions", :force => true do |t|
-    t.integer  "versioned_id"
-    t.string   "versioned_type"
-    t.integer  "user_id"
-    t.string   "user_type"
-    t.string   "user_name"
-    t.text     "modifications"
-    t.integer  "number"
-    t.integer  "reverted_from"
-    t.string   "tag"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
-  add_index "versions", ["number"], :name => "index_versions_on_number"
-  add_index "versions", ["tag"], :name => "index_versions_on_tag"
-  add_index "versions", ["user_id", "user_type"], :name => "index_versions_on_user_id_and_user_type"
-  add_index "versions", ["user_name"], :name => "index_versions_on_user_name"
-  add_index "versions", ["versioned_id", "versioned_type"], :name => "index_versions_on_versioned_id_and_versioned_type"
 
 end

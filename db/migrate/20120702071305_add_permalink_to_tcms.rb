@@ -1,4 +1,4 @@
-class AddPermalinkToTcm < ActiveRecord::Migration
+class AddPermalinkToTcms < ActiveRecord::Migration
   def self.up
     add_column :tcms, :permalink, :string
     add_index :tcms, :permalink

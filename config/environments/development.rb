@@ -34,4 +34,6 @@ ChineseMeds::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  ::GOLLUM_PATH = File.join(Rails.root, 'lib', 'chinese_meds.git')
 end

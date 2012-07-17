@@ -1,4 +1,4 @@
-class AddPermalinkToCupping < ActiveRecord::Migration
+class AddPermalinkToCuppings < ActiveRecord::Migration
   def self.up
     add_column :cuppings, :permalink, :string
     add_index :cuppings, :permalink
