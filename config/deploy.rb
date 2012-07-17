@@ -1,23 +1,22 @@
+require 'bundler/capistrano'
 
 set :application, "chinese_meds"
-set :repository,  "git@github.com:alexkongg/chinese_meds.git"
-
 
 # set :scm_command, "/opt/local/bin/git" 
 # set :local_scm_command, "git" 
 
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :repository,  "git@github.com:alexkongg/chinese_meds.git"
+set :branch, 'master'
+set :deploy_via, :remote_cache
+ssh_options[:forward_agent] = true
+default_run_options[:pty] = true
 
-
-set :deploy_to, "/chinese_meds"
+set :deploy_to, "/home/ubuntu/www/chinese_meds"
 set :user, "ubuntu"
+set :use_sudo, true
 
-
-role :web, "chinese-meds.com"                          # Your HTTP server, Apache/etc
-role :app, "chinese-meds.com"                          # This may be the same as your `Web` server
-role :db,  "chinese-meds.com", :primary => true # this is where Rails migrations will run
-
+server "chinese-meds.com", :web, :app, :db, :primary => true
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
