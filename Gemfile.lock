@@ -140,6 +140,8 @@ GEM
     rubypython (0.5.3)
       blankslate (>= 2.1.2.3)
       ffi (~> 1.0.7)
+    rvm-capistrano (1.2.5)
+      capistrano (>= 2.0.0)
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
     sass (3.1.19)
@@ -190,6 +192,7 @@ DEPENDENCIES
   pygmentize
   rails (= 3.2.3)
   redcarpet
+  rvm-capistrano
   sass-rails (= 3.2.4)
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
