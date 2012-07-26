@@ -13,6 +13,7 @@ gem 'pygmentize'
 gem 'has_permalink'
 gem 'paper_trail' # Have not implemented yet
 gem 'gollum'
+gem 'therubyracer'
 
 group :development do
   gem 'sqlite3', '1.3.5'
