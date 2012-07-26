@@ -13,7 +13,7 @@ default_run_options[:pty] = true
 
 set :deploy_to, "/home/ubuntu/www/chinese_meds"
 set :user, "ubuntu"
-set :use_sudo, true
+set :use_sudo, false
 
 server "chinese-meds.com", :web, :app, :db, :primary => true
 
