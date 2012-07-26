@@ -1,20 +1,20 @@
 <% provide(:title, 'All Herbs')%>
-<h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
+
 
 <div class="row">
-	<div class="span10 offset3" id="allHerbs">
+	
+	<div class="span10" id="allHerbs">
+	<h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
 		<%= will_paginate %>
-		
-		
 		
 			<ul class="herbs">
 				<% @herbs.each do |herb| %>
 					
 				    <li>
-					    
-					    	<%= link_to herb.title, herb_path(herb) %>
+					    <%= link_to herb.name, herb_path(herb) %>
 					                      
-					    <span class = "timestamp">Checked in <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.</span>
+					    <span class = "timestamp">Checked in <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.
+					    </span>
 					    <% if signed_in? %>
 					    	<div class="btn-group">
 					    		
@@ -41,14 +41,15 @@
 		
 		
 		<%= will_paginate %>
-	</div>
-</div>
-
-<div class="row-fluid">
 	<div class="btn-group">
 		<button class="btn"><a href="/herbs/new">New Herb</a></button>
 	</div>
 	<br><br>
+	</div>
+</div>
+
+<div class="row-fluid">
+	
 	<ul class="breadcrumb">
 		<li>
 			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>

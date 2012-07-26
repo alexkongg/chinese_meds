@@ -1,0 +1,26 @@
+<div class="span2" id="herbsidebar">
+		<ul class="nav nav-pills nav-stacked">
+		  <li class="active"><a href="#overview-show" data-toggle="tab">Overview</a></li>
+
+		  <% unless @herb.rendered_physical_description.blank? %>
+		  <li><a href="#physicaldescription-show" data-toggle="tab">Physical Description</a></li>
+		  <% end %>
+
+		  <% unless @herb.rendered_chemical_composition.blank? %>
+		  <li><a href="#chemicalcomposition-show" data-toggle="tab">Chemical Composition</a></li>
+		  <% end %>
+
+		  <% unless @herb.rendered_medicinal_description.blank? %>
+		  <li><a href="#medicinaldescription-show" data-toggle="tab">Uses as Medicine</a></li>
+		  <% end %>
+
+		  <% unless @herb.rendered_precautions.blank? and @herb.rendered_side_effects.blank? %>
+		  <li><a href="#precautions-show" data-toggle="tab">Precautions and Side-Effects </a></li>
+		  <% end %>
+
+		  <% unless @herb.rendered_recent_studies.blank? %>
+		  <li><a href="#recentstudies-show" data-toggle="tab">Recent Studies</a></li>
+		  <% end %>
+		  
+		</ul>
+	</div>

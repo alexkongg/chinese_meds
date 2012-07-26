@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702073119) do
+ActiveRecord::Schema.define(:version => 20120726035514) do
 
   create_table "acupunctures", :force => true do |t|
     t.string   "title"
@@ -59,15 +59,27 @@ ActiveRecord::Schema.define(:version => 20120702073119) do
   add_index "food_therapies", ["permalink"], :name => "index_food_therapies_on_permalink"
 
   create_table "herbs", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.text     "content"
+    t.string   "name"
+    t.text     "physical_description"
+    t.text     "overview"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "rendered_description"
-    t.text     "rendered_content"
+    t.text     "rendered_physical_description"
+    t.text     "rendered_overview"
     t.string   "permalink"
     t.string   "ailment"
+    t.string   "chinese_name"
+    t.text     "medicinal_description"
+    t.text     "rendered_medicinal_description"
+    t.text     "precautions"
+    t.text     "rendered_precautions"
+    t.text     "recent_studies"
+    t.text     "rendered_recent_studies"
+    t.string   "common_name"
+    t.text     "chemical_composition"
+    t.text     "side_effects"
+    t.text     "rendered_chemical_composition"
+    t.text     "rendered_side_effects"
   end
 
   create_table "moxibustions", :force => true do |t|

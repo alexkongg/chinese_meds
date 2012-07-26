@@ -11,18 +11,18 @@
     <%= render 'layouts/shim' %>    
     
     <meta http-equiv="Content-Language" content = "EN">
-    <meta name="description" content="Online authority on Chinese medicine, herbs, teas, extracts, and health supplements. Hundreds of citation-based articles available.">
-  	<meta name="keywords" content="chinese medicine, herbs, extracts, teas, health supplements, database, academic">
-  	<meta name="classification" content="Chinese medicine, herbs, herbal tea, tea, extracts, health supplements, database">
+    <meta name="description" content="Online authority on Chinese traditional medicine, therapy, moxibustion, acupuncture, cupping, herbs, teas, extracts, and health supplements.">
+  	<meta name="keywords" content="chinese medicine, traditional chinese medicine, herbs, extracts, teas, health supplements, database, academic, moxibustion, cupping, food therapy, scientific studies, acupuncture, TCM">
+  	<meta name="classification" content="Chinese medicine, herbs, herbal tea, tea, extracts, health supplements, database, moxibustion, cupping, food therapy, scientific studies, TCM, traditional chinese medicine, acupuncture">
   	
   	
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="stylesheet" href="bootstrap-responsive.css"></link> 
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".subnav">
     <%= render 'layouts/header' %>
-    <br><br><br><br><br><br><br>
-    <div class="container-fluid">
+    
+    <div class="container" id="main-body">
    	  <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>

@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 $grayMediumLight: #eaeaea;
+$greenLight: #C4E1C4;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -48,9 +49,13 @@ body {
   padding-top: 60px;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #FBFBFB;
   
   
+}
+
+#main-body {
+  padding-top: 140px;
 }
 
 
@@ -147,6 +152,32 @@ header {
   background-color: #d59859;
 }
 
+.second-header {
+  margin: auto;
+  width: 1170px;
+}
+
+.subnav-fixed {
+  position: fixed;
+  top: 100px;
+  left:0;
+  right:0;
+  z-index: 1020;
+  border-color: #DCC8A1;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 white, 0 1px 5px rgba(0, 0, 0, .1);
+}
+
+.subnav {
+  width: 100%;
+  height:36px;
+  background-color: #F5F5F5;
+  background-repeat: repeat-x;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
 
 /* home */
 #homeContent {
@@ -179,6 +210,18 @@ input, textarea, select, .uneditable-input {
   @extend .error;
  }
 
+ #form-body {
+  padding-top: 60px;
+
+
+ }
+ #form-entries {
+  border: 1px solid #E5E5E5;
+  padding: 70px;
+  background-color: white;
+      
+  }
+
 /* miscellaneous */
 
 .debug_dump {
@@ -209,36 +252,43 @@ aside {
 
 
 //* Herb Show CSS *//
+#herbsidebar {  
+    float: left;   
+    background-color: white;
+      
+}  
 
-#firstHeading {
+
+
+.herb-descriptors {
   
-  
-  font-size: 2.5em;
+  font-family: 'JournalRegular';
+  font-size: 3.0em;
   margin-bottom: .1em;
+  padding: 10px;
   line-height: 1.2em;
   
   text-align:left;
   
   
-  border-bottom:solid black;
+  border-bottom: 1px solid black;
 }
 
-#bodyContent {
-  position: relative;
-  width: 100%;
-  line-height: 1.5em;
-  font-size: 1.0em;
+#herb-name {
+
+  font-size: 3.5em;
+
 }
 
 #herbShow {
   
   border: 1px solid #bbb;
   padding-left: 10px;
+  padding-bottom: 50px;
+  background-color: white;
 }
 
-#herbShowAilment {
-  
-}
+
 
 //* Herb Index *//
 
@@ -257,7 +307,11 @@ aside {
   }
 }
 
-
+#allHerbs {
+  background-color: white;
+  padding: 100px;
+  border: 1px solid $grayLighter;
+}
 #indexTitle{
   padding-bottom: 50px;
 }

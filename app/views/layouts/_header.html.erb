@@ -13,13 +13,13 @@
 	        <ul class="nav nav-pills pull-right">
 	          <li class="active"><a href = '#'><i class="icon-search"></i></a></li>
 	          
-	            <li><%= link_to "TCM Sources", tcms_path %></li>
-	            <li><%= link_to "Scientific Studies", scientific_studies_path %></li>
-	            <li><%= link_to "Food Therapy", food_therapies_path %></li>
-	            <li><%= link_to "Moxibustion", moxibustions_path %></li>
-	            <li><%= link_to "Acupuncture", acupunctures_path %></li>
-	            <li><%= link_to "Cupping", cuppings_path %></li>
-	            <li><%= link_to "All Herbs", herbs_path %>
+	            <li><%= link_to "TCM Sources", tcms_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "Scientific Studies", scientific_studies_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "Food Therapy", food_therapies_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "Moxibustion", moxibustions_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "Acupuncture", acupunctures_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "Cupping", cuppings_path %></li><li class="divider-vertical"></li>
+	            <li><%= link_to "All Herbs", herbs_path %><li class="divider-vertical"></li>
 	            
 	            
 	            <% if signed_in? %>
