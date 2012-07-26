@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-require "rvm/capistrano"
+require 'rvm/capistrano'
 
 set :application, "chinese_meds"
 
@@ -9,7 +9,6 @@ set :application, "chinese_meds"
 set :scm, :git
 set :repository,  "git@github.com:alexkongg/chinese_meds.git"
 set :branch, 'master'
-ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 
 set :deploy_to, "/home/ubuntu/www/chinese_meds"
@@ -19,10 +18,6 @@ set :use_sudo, true
 server "chinese-meds.com", :web, :app, :db, :primary => true
 
 set :rvm_ruby_string, 'ruby-1.9.3-p194@global'
-
-before 'deploy:setup', 'rvm:install_rvm'   # install RVM
-before 'deploy:setup', 'rvm:install_ruby'  # install Ruby and create gemset, or:
-before 'deploy:setup', 'rvm:create_gemset' # only create gemset
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
