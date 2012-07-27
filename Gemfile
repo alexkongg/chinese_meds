@@ -13,6 +13,7 @@ gem 'pygmentize'
 gem 'has_permalink'
 gem 'paper_trail' # Have not implemented yet
 gem 'gollum'
+gem 'therubyracer'
 
 group :development do
   gem 'sqlite3', '1.3.5'
@@ -33,4 +34,5 @@ gem 'jquery-rails', '2.0.0'
 
 group :production do
   gem 'pg', '0.12.2'
+  gem 'unicorn'
 end
