@@ -13,11 +13,11 @@
 class Herb < ActiveRecord::Base
   before_save :render_body
   attr_accessible :name, :overview, :physical_description,
-                  :rendered_physical_description, :rendered_overview, :ailment,
+                  :rendered_physical_description, :rendered_overview,
                   :chinese_name, :medicinal_description, :rendered_medicinal_description, :precautions, 
                   :rendered_precautions, :recent_studies, :rendered_recent_studies, :common_name,
                   :chemical_composition, :side_effects, :rendered_chemical_composition, :rendered_side_effects
-  has_permalink 
+  has_permalink :name
 
   self.per_page = 10
   
@@ -25,10 +25,23 @@ class Herb < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 140 }
 
   
-  default_scope order: 'herbs.name'
+  default_scope order: 'Herbs.name'
   
 
-  
+  #searchable do 
+  #  text :name, :boost => 5
+  #  text :common_name, :boost => 5
+  #  text :chinese_name, :boost => 5
+  #  text :overview
+  #  text :physical_description
+  #  text :medicinal_description
+  #  text :precautions
+  #  text :side_effects
+  #  text :recent_studies
+  #  text :chemical_composition
+
+    
+  # end
   
   private
   

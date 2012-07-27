@@ -7,7 +7,10 @@ class HerbsController < ApplicationController
   
   
   def index
-    
+    #@search = Article.search do
+    #  fulltext params[:search]
+    #end
+    #@herbs = @search.results
     @herbs = Herb.paginate(page: params[:page])
 
     respond_to do |format|

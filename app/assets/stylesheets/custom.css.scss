@@ -222,6 +222,14 @@ input, textarea, select, .uneditable-input {
       
   }
 
+.searchbox {
+  textfield {
+    height: 30px;
+  }
+  width: 150px;
+}
+
+
 /* miscellaneous */
 
 .debug_dump {
@@ -311,9 +319,6 @@ aside {
   background-color: white;
   padding: 100px;
   border: 1px solid $grayLighter;
-}
-#indexTitle{
-  padding-bottom: 50px;
 }
 
 

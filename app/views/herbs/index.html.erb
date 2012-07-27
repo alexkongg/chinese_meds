@@ -3,19 +3,38 @@
 
 <div class="row">
 	
+	
 	<div class="span10" id="allHerbs">
-	<h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
 		<%= will_paginate %>
+		<%= form_tag herbs_path, :method => :get do %>
+			<p>
+				<div class="searchbox">
+					<%= text_field_tag :search, params[:search] %>
+				</div>
+				<%= submit_tag "Search", :name => nil %>
+			</p>
+		<% end %>
 		
 			<ul class="herbs">
 				<% @herbs.each do |herb| %>
 					
 				    <li>
-					    <%= link_to herb.name, herb_path(herb) %>
-					                      
-					    <span class = "timestamp">Checked in <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.
+					    <h3><%= link_to herb.name, herb_path(herb) %></h3>
+					    <span class = "timestamp">Checked in on <%= herb.created_at.strftime('%b, %d, %Y') %>.
 					    </span>
-					    <% if signed_in? %>
+					    <br>
+					    <% unless herb.common_name.blank? %>
+					    <b>Common Name: </b><i><%= herb.common_name %></i>
+					    <% end %>
+					    <% unless herb.chinese_name.blank? %>
+					    <b>Chinese Name: </b><i><%= herb.chinese_name %></i>
+					    <% end %>
+					    
+
+					    <br><br>
+				    	<div class="overview"><%= raw herb.rendered_overview %></div>
+				    	<br>
+				 		<% if signed_in? %>
 					    	<div class="btn-group">
 					    		
 						    	<button class="btn">
@@ -31,7 +50,6 @@
 					    	
 				   		
 				    	<% end %>
-				    	
 			    	</li>
 			    	<br>
 			    <% end %>
