@@ -1,4 +1,4 @@
-class AddPermalinkToFoodTherapy < ActiveRecord::Migration
+class AddPermalinkToFoodTherapies < ActiveRecord::Migration
   def self.up
     add_column :food_therapies, :permalink, :string
     add_index :food_therapies, :permalink

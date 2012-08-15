@@ -1,4 +1,4 @@
-class AddPermalinkToScientificStudy < ActiveRecord::Migration
+class AddPermalinkToScientificStudies < ActiveRecord::Migration
   def self.up
     add_column :scientific_studies, :permalink, :string
     add_index :scientific_studies, :permalink

@@ -19,7 +19,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: chinese_meds_production 
+  username: chinese_meds
+  password: ch1n4m4n
   pool: 5
   timeout: 5000
