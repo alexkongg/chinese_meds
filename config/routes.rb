@@ -3,7 +3,6 @@ ChineseMeds::Application.routes.draw do
 
   resources :admins
   resources :herbs
-  resources :tcms
   resources :food_therapies
   resources :moxibustions
   resources :acupunctures
@@ -14,14 +13,14 @@ ChineseMeds::Application.routes.draw do
   root :to => "static_pages#home"
   
 
-  match '/signup',            to: "admins#new"
-  match '/signin',            to: "sessions#new"
-  match '/signout',           to: "sessions#destroy", via: :delete
+  match '/signup',                       to: "admins#new"
+  match '/signin',                       to: "sessions#new"
+  match '/signout',                      to: "sessions#destroy", via: :delete
 
-  
-  match '/about',            to: "static_pages#about"
+  match '/traditional-chinese-medicine', to: "tcms#index"
+  match '/about',                        to: "static_pages#about"
 
-  match '/contact',          to: "static_pages#contact"
+  match '/contact',                      to: "static_pages#contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
