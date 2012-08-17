@@ -1,51 +1,110 @@
-<% provide(:title, 'All TCM Articles')%>
-<h1>All TCM Articles (<%= @tcms.count %>) </h1>
+<% provide(:title, 'Traditional Chinese Medicine - Twelve Channels')%>
+<div class="TCMmain">
 
-<div class="row">
-	<div class="span4 offset6"><h2>Coming Soon!</h2></div>
-</div>
+<section>
+
+<h1 class="title">Foundations of Traditional Chinese Medicine</h1>
+<h2 class="subtitle">Introduction to the 12 Fundamental Channels of Traditional Chinese Medicine.</h2>
 
 <div class="row-fluid">
-	<div class="span8 offset2">
-		<%= will_paginate %>
+	<div class="span12" id="TCMintro">
 		
+		Chinese Medicine consists of a wide range of medical practices that share primitive theoretical concepts rooted from the ancient Chinese tradition which have been formulated for over two thousand years ago. To give you a better understanding on how Chinese medicine works; we will be briefly discussing the 12 channels of TCM below:
 		
-		
-		<ul class="tcms">
-			<% @tcms.each do |tcm| %>
-				<div class="hero-unit">
-			    	<li><%= link_to tcm.title, tcm_path(tcm) %></li>
-			    	
-			    	<span class = "timestamp">Submitted <%= tcm.created_at %>.</span>
-			    	<% if signed_in? %>
-			    		<div class="btn-group">
-			    		
-			    			<button class="btn>"><i class="icon-edit"></i> <%= link_to 'Edit', edit_tcm_path(tcm) %> </button> 
-			    			<button class="btn>"><i class="icon-trash"></i> <%= link_to 'Destroy', tcm, confirm: 'Are you sure?', method: :delete %> </button>
-			    		</div>
-		   		</div>	
-		    		<% end %>
-		    	<br>
-		    <% end %>
-		</ul>
-		
-		
-		
-		<%= will_paginate %>
 	</div>
 </div>
 
 <div class="row-fluid">
-	<div class="btn-group">
-		<button class="btn"><a href="/tcmsnew">New TCM Article</a></button>
+	<div class="span4">
+		<h3>Heart Channel of the Hand</h3>
+		Known as the Lesser Yin, the heart which is considered as the Yin, teams up with the small intestine which is the Yang. According to the Qigong teachings, it is said that the mind is related to the heart and also the soul. Chinese Medicine believes that the heart is where the temple of the spirit resides hence it is capable of supplying Fire Qi while also giving unlimited nourishment to the spirit.
 	</div>
-	<br><br>
+
+
+	<div class="span4">
+		<h3>Stomach Channel of the Foot</h3>
+		Belonging to the Earth in the 5 Phases, the spleen is considered as the Yin and the stomach is the Yang. The pairing of the stomach and spleen – the Yang Brightness - serves as the best example of strong yin-yang relationship amongst body organs. The paired organs of the stomach and spleen have control over the limbs and the flesh, while the mouth serves as the opening.
+	</div>
+
+	<div class="span4">
+		<h3>Triple Burner Channel of the Hand</h3>
+		The major function of liquid metabolism is mainly regulated by an organ called as the triple burner. The three burners refer to the three body regions that used to bevy the organs. It is composed of the upper burner (neck, chest, head), middle burner (pertaining to the region in between the navel and chest) and the lower burner (spanning from the lower part of the abdomen through the urinary bladder and kidney functions.
+	</div>
+	
+</div>
+
+
+
+<div class="row-fluid">
+	<div class="span4">
+		<h3>Lung Channel of the Hand</h3>
+		Belonging to the Metal in the 5 Phases, the lung (which is the Yin) is paired with the large intestines (the Yang). This channel steers the hair and skin, while the nose serves as the opening. The nose connects the lungs to the outside world. The lungs are usually the first to be attacked by diseases hence it is also being referred to as the Delicate Organ. Moreover, the lungs are also very much sensitive to emotions. In addition to this, this organ helps to modulate heartburn and also regulates liquid metabolism responsible for distributing liquid throughout the skin. 
+	</div>
+
+	<div class="span4">
+		<h3>Small Intestine Channel of the Hand</h3>
+		The small intestine is teamed up with the heart, and both organs belong to the Fire in the 5 Phases. The main function of the small intestine is to isolate the wastes from the nutritional content of the foods. All wastes go to the large intestines while the nutritional elements of the foods are distributed all over the body. The tongue is their opening organ. And they are responsible for managing the blood vessels which is being reflected on one’s face. 
+	</div>
+
+
+	<div class="span4">
+		<h3>Urinary Bladder Channel of the Foot</h3>
+		Also referred to as the Greater Yang, the urinary bladder represents the Yang and the kidneys represent the Yin. They are matching organs corresponding to the Water in the 5 Phases. For this channel, the opening organ is the urethra and the sensory organ is the ear. It is said that these organs control the brain, marrow, and bones. Meanwhile their health is being reflected through the head’s hair. Since it is believed that the Original Essence is found in the kidneys, practitioners of Qigong train well to effectively handle this very important body organ.
+	</div>
+	
+</div>
+
+
+<div class="row-fluid">
+
+	<div class="span4">
+		<h3>Kidney Channel of the Foot</h3>
+		Known as the Lesser Yin, the kidneys is where the Yuan Jing (Original Essence) resides. Because of this, diseases affecting the kidneys will also likely to influence other organs in the body. It is important to note that the kidneys play a crucial role in regulating the metabolism of liquids. 
+	</div>
+
+	
+	<div class="span4">
+		<h3>Large Intestine Channel of the Hand</h3>
+		The large intestine, which is the Yang, is paired with the lungs, which are the Yin. Some abdominal pains are said to be symptoms of a blocked Qi (blood) in the large intestines. 
+	</div>
+
+
+	<div class="span4">
+		<h3>Liver Channel of the Foot</h3>
+		The liver is considered as the Yin while the gall bladder is the Yang.  These paired organs belong to the Wood in the 5 Phases. The eyes serve as their opening and they are responsible for controlling the joints and muscles. The health of the liver channel is being reflected through the toe nails and fingernails.
+	</div>
+</div>
+
+<div class="row-fluid">
+
+	<div class="span4">
+		<h3>Pericardium Channel of the Hand</h3>
+		The pairing of the pericardium (the Yin) and the triple burners (the Yang) belongs to the Ministerial Fire. Since the heart is the body’s most vital organ, the regulation of Qi or blood in the pericardium is given utmost importance by Qigong practitioners. 
+	</div>
+
+	<div class="span4">
+		<h3>Gall Bladder Channel of the Foot</h3>
+		The gallbladder functions to store and excrete liver bile. Compared to its paired organ, the liver, the gallbladder is not given much attention by practitioners of Qigong. Though that may be the case it is still as important as any organs in the body.
+	</div>
+
+	<div class="span4">
+		<h3>Spleen Channel of the Foot</h3>
+		The spleen is the organ responsible for digestion. It functions to transform the food we eat into nourishment that the body needs. Knowing that, a weak spleen won’t be able to utilize the nourishment found in foods. Among the five Yin organs, it is said that the spleen is the most difficult to regulate.
+	</div>
+</div>
+
+</section>
+
+</div>
+
+<br><br>
+<div class="row-fluid">
 	<ul class="breadcrumb">
 		<li>
-			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds</a> <span class="divider">/</span>
 		</li>
 		<li class="active">
-			<i class="icon-book"></i> All TCM Articles
+			<i class="icon-book"></i> Traditional Chinese Medicine: The 12 Channels
 		</li>
 		
 	</ul>

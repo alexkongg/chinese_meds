@@ -1,21 +1,40 @@
 <% provide(:title, 'All Herbs')%>
-<h1 id="indexTitle">All Herbs (<%= @herbs.count %>) </h1>
+
 
 <div class="row">
-	<div class="span10 offset3" id="allHerbs">
+	
+	
+	<div class="span10" id="allHerbs">
 		<%= will_paginate %>
-		
-		
+		<%= form_tag herbs_path, :method => :get do %>
+			<p>
+				<div class="searchbox">
+					<%= text_field_tag :search, params[:search] %>
+				</div>
+				<%= submit_tag "Search", :name => nil %>
+			</p>
+		<% end %>
 		
 			<ul class="herbs">
 				<% @herbs.each do |herb| %>
 					
 				    <li>
+					    <h3><%= link_to herb.name, herb_path(herb) %></h3>
+					    <span class = "timestamp">Checked in on <%= herb.created_at.strftime('%b, %d, %Y') %>.
+					    </span>
+					    <br>
+					    <% unless herb.common_name.blank? %>
+					    <b>Common Name: </b><i><%= herb.common_name %></i>
+					    <% end %>
+					    <% unless herb.chinese_name.blank? %>
+					    <b>Chinese Name: </b><i><%= herb.chinese_name %></i>
+					    <% end %>
 					    
-					    	<%= link_to herb.title, herb_path(herb) %>
-					                      
-					    <span class = "timestamp">Checked in <%= distance_of_time_in_words_to_now(herb.created_at) %> ago.</span>
-					    <% if signed_in? %>
+
+					    <br><br>
+				    	<div class="overview"><%= raw herb.rendered_overview %></div>
+				    	<br>
+				 		<% if signed_in? %>
 					    	<div class="btn-group">
 					    		
 						    	<button class="btn">
@@ -31,7 +50,6 @@
 					    	
 				   		
 				    	<% end %>
-				    	
 			    	</li>
 			    	<br>
 			    <% end %>
@@ -41,14 +59,15 @@
 		
 		
 		<%= will_paginate %>
-	</div>
-</div>
-
-<div class="row-fluid">
 	<div class="btn-group">
 		<button class="btn"><a href="/herbs/new">New Herb</a></button>
 	</div>
 	<br><br>
+	</div>
+</div>
+
+<div class="row-fluid">
+	
 	<ul class="breadcrumb">
 		<li>
 			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>

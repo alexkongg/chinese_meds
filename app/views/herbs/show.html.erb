@@ -1,43 +1,65 @@
-<% provide(:title, "#{@herb.title}") %>
+<% provide(:title, "#{@herb.name}") %>
 
 <br><br>
 <div class="row-fluid">
-	<div class="span2" id="herbShowAilment">
-		<br>
-		<br>
-		<h4><%= @herb.title %>: Ailments</h4>
-		<br>
-		<ul>
-			<li><%= @herb.ailment%></li>
-		</ul>
-	</div>
+	<%= render 'herbsidebar' %>
+
 	<div class="span10" id="herbShow">
-		<div class="tabbable">
-			
-			<ul class="nav nav-tabs pull-right" id="herb-nav">
-				<li class="active">
-					<a href="#tab1" data-toggle="tab">Herb</a>
-				</li>
-				<li>
-					<a href="#tab2" data-toggle="tab">Edit</a>
-				</li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane active" id="tab1">
-					<br><br>
-					<div class="article-body">
-					<h1 id ="firstHeading">Herb: <%= @herb.title %></h1>
-						<br><br>
-						<div id="bodyContent">
-							<p>Description: <%= raw @herb.rendered_description%></p>
-							<p>Content: <%= raw @herb.rendered_content%></p>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane" id="tab2">
-					<p><%= render 'form' %></p>
-				</div>
-			</div>
+		<div class="tab-content">
+		  <div class="tab-pane active" id="overview-show">
+		  		<h1 class="herb-descriptors" id="herb-name"> <%= @herb.name %> </h1>
+		  		<p>
+		  			<b>Commonly known as:</b> <%= @herb.common_name %>
+		  		</p>
+		  		<p>
+		  			<b>Chinese Name:</b> <%= @herb.chinese_name %>
+				</p>
+ 				<p>
+  					<%= raw @herb.rendered_overview %>
+	  			</p>
+
+		  		
+		  </div>
+		  <div class="tab-pane" id="physicaldescription-show">
+		  	<h1 class="herb-descriptors">Physical Description</h1>
+		  		<p>
+		  			<%= raw @herb.rendered_physical_description %>
+		  		</p>
+
+		  </div>
+		  <div class="tab-pane" id="chemicalcomposition-show">
+		  	<h1 class="herb-descriptors">Chemical Composition</h1>
+		  		<p>
+		  			<%= raw @herb.rendered_chemical_composition %>
+		  		</p>
+		  </div>
+		  <div class="tab-pane" id="medicinaldescription-show">
+		  	<h1 class="herb-descriptors">Medicinal Uses</h1>
+		  		<p>
+		  			<%= raw @herb.rendered_medicinal_description %>
+		  		</p>
+
+		  </div>
+		  <div class="tab-pane" id="precautions-show">
+		  	<h1 class="herb-descriptors">Precautions and Side-Effects</h1>
+		  		<p>
+		  			<%= raw @herb.rendered_precautions %>
+		  		</p>
+
+		  		<p>
+		  			<%= raw @herb.rendered_side_effects %>
+		  		</p>
+
+		  </div>
+
+		  <div class="tab-pane" id="recentstudies-show">
+		  	<h1 class="herb-descriptors">Recent Studies</h1>
+		  		<p>
+		  			<%= raw @herb.rendered_recent_studies %>
+		  		</p>
+
+
+		  </div>
 		</div>
 	</div>
 </div>
@@ -47,7 +69,7 @@
 				 
 				
 				
-	
+<br><br>
 <div class="row">
 	<div class="span12">
 	<ul class="breadcrumb">
@@ -58,7 +80,7 @@
 			<a href='/herbs'><i class="icon-book"></i> All Herbs</a> <span class="divider">/</span>
 		</li>
 		<li class="active">
-			<i class="icon-leaf"></i> <%= @herb.title %>
+			<i class="icon-leaf"></i> <%= @herb.name %>
 		</li>
 	</ul>
 	</div>

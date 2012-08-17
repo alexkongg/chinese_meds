@@ -1,39 +1,121 @@
-<h1>New Herb</h1>
+<%= render 'form_header'%>
+<div id="form-body">
+  <div id="form-entries">
 
-<%= render 'stylemodal'%>
-<br>
-<br>
+  <div id="names">
+  </div>
+  <h1>Herb Profile</h1>
 
-<%= form_for(@herb) do |f| %>
-  <%= render 'shared/form_error' %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :ailment %><br />
-    <%= f.text_field :ailment %>
-  </div>
-  <div class="field">
-  	
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-   
-    
-  </div>
-  <div class="field">
-  	
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+
+  <%= render 'stylemodal'%>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <%= form_for(@herb) do |f| %>
+
+    <%= render 'shared/form_error' %>
     
     
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    
+    <div class="field">
+       <%= f.label :name, "Name*"  %><i>e.g. Euphorbia Pekinensis</i><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    
+    <div class="field">
+      
+      <%= f.label :common_name %><i>e.g. Peking Spurge</i><br />
+      <%= f.text_field :common_name %>
+      
+    </div>
 
+    <div class="field">
+      
+      <%= f.label :chinese_name %><i>e.g. Da Ji</i><br />
+      <%= f.text_field :chinese_name %>
+      
+    </div>
 
-<% end %>
+    <div id="overview">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :overview, "Overview*" %><br />
+      <%= f.text_area :overview %>
+      
+    </div>
 
+    <div id="physicaldescription">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+    	
+      <%= f.label :physical_description %><br />
+      <%= f.text_area :physical_description %>
 
+    </div>
 
+    <div id="chemicalcomposition">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :chemical_composition %><br />
+      <%= f.text_area :chemical_composition %>
+      
+    </div>
+
+    <div id="medicinaldescription">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :medicinal_description %><br />
+      <%= f.text_area :medicinal_description %>
+      
+    </div>
+
+    <div id="precautions">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :precautions %><br />
+      <%= f.text_area :precautions %>
+      
+    </div>
+
+    <div id="sideeffects">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :side_effects %><br />
+      <%= f.text_area :side_effects %>
+      
+    </div>
+
+    <div id="recentstudies">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="field">
+      
+      <%= f.label :recent_studies %><br />
+      <%= f.text_area :recent_studies %>
+      
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  
+  <% end %>
+
+</div>
+
+</div>
