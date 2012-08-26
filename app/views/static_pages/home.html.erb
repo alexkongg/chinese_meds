@@ -1,7 +1,9 @@
 <div class="row">
 	<div class="span10 offset1">
 		<div class="well well-large">
+			<div id="searchhelp">
 			Search for an herb or relevant words and find the most relevant herbs in Traditional Chinese Medicine!
+			</div>
 			<%= form_tag herbs_path, :method => :get do %>
 			<br>
 			<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diuretic", "data-provide" => "typeahead", "data-source" =>  
