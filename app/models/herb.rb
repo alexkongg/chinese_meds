@@ -28,20 +28,20 @@ class Herb < ActiveRecord::Base
   default_scope order: 'Herbs.name'
   
 
-  #searchable do 
-  #  text :name, :boost => 5
-  #  text :common_name, :boost => 5
-  #  text :chinese_name, :boost => 5
-  #  text :overview
-  #  text :physical_description
-  #  text :medicinal_description
-  #  text :precautions
-  #  text :side_effects
-  #  text :recent_studies
-  #  text :chemical_composition
+  searchable do 
+    text :name, :boost => 20
+    text :common_name, :boost => 20
+    text :chinese_name, :boost => 20
+    text :rendered_overview
+    text :rendered_physical_description
+    text :rendered_medicinal_description
+    text :rendered_precautions
+    text :rendered_side_effects
+    text :rendered_recent_studies
+    text :rendered_chemical_composition
 
     
-  # end
+   end
   
   private
   
