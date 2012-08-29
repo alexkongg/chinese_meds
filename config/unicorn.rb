@@ -19,14 +19,14 @@ listen 3000 # we can't use sockets because it breaks no-downtime deploys :(
 # By default, Unicorn master processes fork to the same directory that they were started in, but
 # since Capistrano cleans up old releases we need to tell 
 # http://unicorn.bogomips.org/Unicorn/Configurator.html#method-i-working_directory
-working_directory '/home/ubuntu/www/chinese_meds/current'
+working_directory '/u/apps/chinese_meds/current'
 
 # Set the path of the log files
-stderr_path '/home/ubuntu/www/chinese_meds/shared/log/unicorn.stderr.log'
-stdout_path '/home/ubuntu/www/chinese_meds/shared/log/unicorn.stdout.log'
+stderr_path '/u/apps/chinese_meds/shared/log/unicorn.stderr.log'
+stdout_path '/u/apps/chinese_meds/shared/log/unicorn.stdout.log'
 
 # Set the path of the PID file
-pid_path = '/home/ubuntu/www/chinese_meds/shared/pids/unicorn.pid'
+pid_path = '/u/apps/chinese_meds/shared/pids/unicorn.pid'
 
 pid pid_path 
 
@@ -36,7 +36,7 @@ before_exec do |server|
   # variable, so we have to manually set it every time unicorn restarts :(
   #
   # http://unicorn.bogomips.org/Sandbox.html
-  ENV["BUNDLE_GEMFILE"] = "/home/ubuntu/www/chinese_meds/current/Gemfile"
+  ENV["BUNDLE_GEMFILE"] = "/u/apps/chinese_meds/current/Gemfile"
 end
 
 before_fork do |server, worker|
