@@ -82,9 +82,6 @@ GEM
       net-ssh (>= 1.99.1)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
-    paper_trail (2.6.3)
-      activerecord (~> 3.0)
-      railties (~> 3.0)
     pg (0.12.2)
     pg (0.12.2-x86-mingw32)
     polyglot (0.3.3)
@@ -172,7 +169,6 @@ DEPENDENCIES
   faker (= 1.0.1)
   has_permalink
   jquery-rails
-  paper_trail
   pg (= 0.12.2)
   pygmentize
   rails (= 3.2.3)

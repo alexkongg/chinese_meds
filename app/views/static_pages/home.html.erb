@@ -6,12 +6,13 @@
 			</div>
 			<%= form_tag herbs_path, :method => :get do %>
 			<br>
+
 			<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead",
 
 			"data-source" =>  
 
 
-			["Agastache Rugosa", "Alangium Chinense", "Anemone Chinensis", "Anisodus Tanguticus",
+			'["Agastache Rugosa", "Alangium Chinense", "Anemone Chinensis", "Anisodus Tanguticus",
 			"Ardisia Japonica", "Aster Tataricus", "Camelia Sinensis", "Cannabis Sativa", "Carthamus Tinctoris", "Cinnamon Cassia",
 			"Cissampelos Pareira", "Coptis Chinensis", "Corydalis Ambigua", "Croton Tiglium", "Daphne Genkwa", "Datura Metel",
 			"Dendrobium Nobile", "Dichroa Febrifuga", "Ephedra Sinica", "Eucommia Ulmoides", "Euphorbia Pekinensis", "Flueggea Suffruticosa",
@@ -28,7 +29,7 @@
 			"Gout", "Migraine", "Schizophrenia", "Eczema", "Delirium", "Convulsions", "Cystitis", "Morphine Withdrawal", "Weight Loss", "Safflower", 
 			"Hóng Huā", "Chinese Cinnamon", "Velvet Leaf", "Xí Shēng Téng", "Chinese Goldthread", "Duǎn è Huáng Lián", "Fumewort", "Yán Hú Suǒ",
 			"Sedative", "Cancer Prevention", "Antispasmodic", "Antiseptic", "Cardiotonic", "Analgesic", "Bā Dòu", "Purging Croton", "Lilac Daphne", 
-			"Yuán Huā", "Antiviral", "Anticoagulant", "Diuretic", "Devil's Trumpet", "Yáng Jīn Huā", "Jimson Weed", "Zǐ Huā Màn Tuó Luó", 
+			"Yuán Huā", "Antiviral", "Anticoagulant", "Diuretic", "Yáng Jīn Huā", "Jimson Weed", "Zǐ Huā Màn Tuó Luó", 
 			"Glaucoma", "Pregnant", "Breastfeeding", "GERD", "Noble Dendrobium", "Shi Hu", "Shi Hu Lan", "Chinese Quinine", "Blue Evergreen Hydrangea",
 			"Chang Shan", "Cǎo Má Huáng", "Chinese Ephedra", "Dù Zhòng", "Hardy Rubber Tree", "Da Ji", "Peking Spurge", "Yī Yè Qiū", "Liánqiáo", 
 			"Weeping Forsythia", "Di Ding", "Zào Jiá", "Chinese Honeylocust", "Gān Cǎo", "Licorice", "Chinese Licorice", "Dà Fēng Zǐ", "Chaulmoogra Tree",
@@ -40,7 +41,7 @@
 			"Costus", "Yun Mu Xiang", "Swelling", "Menstruation", "Chinese Magnolia Vine", "Wu Wei Zi", "Huáng Qín", "Baikal Skullcap",
 			"Chest Pain", "Drowsiness", "Lung", "Bǎi Bù", "Fáng Jǐ", "Stephanie Root", "Huái", "Huái Huā", "Huái Shù", "Pagoda Tree",
 			"Guā Lóu", "Chinese Cucumber", "Diabetes", "Influenza", "Liǎo Gē Wáng", "Indian Stringbush", "Brahmi", "Water Hyssop", 
-			"Moneywort", "Thyme-Leaf Gratiola"]  
+			"Moneywort", "Thyme-Leaf Gratiola"]' 
 
 			%>
 			<%= submit_tag "Find me an Herb!", :name => nil %>

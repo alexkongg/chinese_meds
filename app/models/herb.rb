@@ -26,7 +26,6 @@ class Herb < ActiveRecord::Base
 
   
   default_scope order: 'Herbs.name'
-  
 
   searchable do 
     text :name, :boost => 20
