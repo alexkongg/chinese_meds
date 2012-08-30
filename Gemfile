@@ -9,11 +9,11 @@ gem 'bootstrap-will_paginate'
 gem 'albino'
 gem 'pygmentize'
 gem 'has_permalink'
+gem 'paper_trail' # Have not implemented yet
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'therubyracer'
 gem 'sunspot_rails'
-
 
 group :development do
   gem 'sqlite3', '1.3.5'
