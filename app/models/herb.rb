@@ -19,7 +19,7 @@ class Herb < ActiveRecord::Base
                   :chemical_composition, :side_effects, :rendered_chemical_composition, :rendered_side_effects
   has_permalink :name
 
-  self.per_page = 10
+  self.per_page = 5
   
   validates :overview, presence: true
   validates :name, presence: true, length: { maximum: 140 }

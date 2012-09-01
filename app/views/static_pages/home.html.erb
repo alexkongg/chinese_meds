@@ -7,43 +7,9 @@
 			<%= form_tag herbs_path, :method => :get do %>
 			<br>
 
-			<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead",
-
-			"data-source" =>  
+			<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead" %>
 
 
-			'["Agastache Rugosa", "Alangium Chinense", "Anemone Chinensis", "Anisodus Tanguticus",
-			"Ardisia Japonica", "Aster Tataricus", "Camelia Sinensis", "Cannabis Sativa", "Carthamus Tinctoris", "Cinnamon Cassia",
-			"Cissampelos Pareira", "Coptis Chinensis", "Corydalis Ambigua", "Croton Tiglium", "Daphne Genkwa", "Datura Metel",
-			"Dendrobium Nobile", "Dichroa Febrifuga", "Ephedra Sinica", "Eucommia Ulmoides", "Euphorbia Pekinensis", "Flueggea Suffruticosa",
-			"Forsythia Suspensa", "Gentiana Loureiroi", "Gleditsia Sinensis", "Glycyrrhiza Uralensis", "Hydnocarpus Anthelminticus", 
-			"Llex Purpurea", "Leonurus Japonicus", "Ligusticum Wallichii", "Lobelia Chinensis", "Phellodendron Amurense", "Platycladus Orientalis",
-			"Pseudolarix Amabilis", "Psilopeganum Sinense", "Pueraria Lobata", "Rauwolfia Serpentina", "Rehmannia Glutinosa", "Rheum Officinale",
-			"Rhododendron Tsinghaiense", "Saussurea Costus", "Schisandra Chinensis", "Scutellaria Baicalensis", "Stemona Tuberosa", "Stephania Tetandra",
-			"Styphnolobium Japonicum", "Trichosanthes Kirilowii", "Wikstroemia Indica", "Bacopa Monnieri", "Epigallocatechin Gallate", "Maitake",
-			"Relora", "Green Tea Extract", "American Ginseng", "Chinese Ginseng", "Ginseng", "Huo Xiang", "Mint", "Tea", "Bā Jiǎo Fēng",
-			"Chinese Alangium Root", "Contraceptive", "Chinese Anemone", "Bái Tóu Weng", "Dysentery", "Malaria", "Detoxifier", "Ear Infection",
-			"Eye Infection", "Arthritis", "Cold", "Cough", "Fever", "Bronchitis", "Menstrual Problems", "Mumps", "Measles", "Insomnia", "Digestive Problems",
-			"Shān Làng Dàng", "Marlberry", "Zǐ Jīn Niú", "Zǐ Wǎn", "Tartar Aster", "E. Coli" "B. Typhi", "Staphylococcus Aureus", "Bacillus Dysenteriae",
-			"Chinese Astragalus", "Bei Qi", "Huang Qi", "Tea Plant", "Cha Shu", "Cha Ye", "Dà Má", "Glaucoma", "Chronic Pain", "Epilepsy", "Gonorrhea",
-			"Gout", "Migraine", "Schizophrenia", "Eczema", "Delirium", "Convulsions", "Cystitis", "Morphine Withdrawal", "Weight Loss", "Safflower", 
-			"Hóng Huā", "Chinese Cinnamon", "Velvet Leaf", "Xí Shēng Téng", "Chinese Goldthread", "Duǎn è Huáng Lián", "Fumewort", "Yán Hú Suǒ",
-			"Sedative", "Cancer Prevention", "Antispasmodic", "Antiseptic", "Cardiotonic", "Analgesic", "Bā Dòu", "Purging Croton", "Lilac Daphne", 
-			"Yuán Huā", "Antiviral", "Anticoagulant", "Diuretic", "Yáng Jīn Huā", "Jimson Weed", "Zǐ Huā Màn Tuó Luó", 
-			"Glaucoma", "Pregnant", "Breastfeeding", "GERD", "Noble Dendrobium", "Shi Hu", "Shi Hu Lan", "Chinese Quinine", "Blue Evergreen Hydrangea",
-			"Chang Shan", "Cǎo Má Huáng", "Chinese Ephedra", "Dù Zhòng", "Hardy Rubber Tree", "Da Ji", "Peking Spurge", "Yī Yè Qiū", "Liánqiáo", 
-			"Weeping Forsythia", "Di Ding", "Zào Jiá", "Chinese Honeylocust", "Gān Cǎo", "Licorice", "Chinese Licorice", "Dà Fēng Zǐ", "Chaulmoogra Tree",
-			"Kidney", "Headache", "Muscle Pain", "Visual Impairment", "Laryngospasm", "Dyspnea", "Purple Holly", "Dongqing", "Yì Mǔ Cǎo", 
-			"Chinese Motherwort", "Infertility", "Edema", "Urine", "Chuān Xiōng", "Szechuan Lovage", "Bàn Biān alián",
-			"Creeping Lobelia", "Huáng Bǎi", "Amur Cork Tree", "Cèbǎi", "Chinese Arborvitae", "Jīn Qián Sōng", "Golden Larch", "Naked Rue",
-			"Shān Má Huáng", "Gé Gēn", "Kudzu", "Shégēnmù", "Cóng Shégēnmù", "Yìndù Shé Mù", "Indian Snakeroot", "Sarpagandha",
-			"Gān Dìhuáng", "Dìhuáng", "Chinese Foxglove", "Yào Yòng Dà Huáng", "Chinese Rhubarb", "Eastern Rhubarb", "Qīng Hǎi Dù Juān",
-			"Costus", "Yun Mu Xiang", "Swelling", "Menstruation", "Chinese Magnolia Vine", "Wu Wei Zi", "Huáng Qín", "Baikal Skullcap",
-			"Chest Pain", "Drowsiness", "Lung", "Bǎi Bù", "Fáng Jǐ", "Stephanie Root", "Huái", "Huái Huā", "Huái Shù", "Pagoda Tree",
-			"Guā Lóu", "Chinese Cucumber", "Diabetes", "Influenza", "Liǎo Gē Wáng", "Indian Stringbush", "Brahmi", "Water Hyssop", 
-			"Moneywort", "Thyme-Leaf Gratiola"]' 
-
-			%>
 			<%= submit_tag "Find me an Herb!", :name => nil %>
 			
 			<% end %>
