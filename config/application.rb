@@ -9,7 +9,6 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 
-
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
@@ -65,3 +64,5 @@ module ChineseMeds
     config.assets.version = '1.0'
   end
 end
+
+Sunspot.config.pagination.default_per_page = 5
