@@ -275,7 +275,7 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
-  
+
   @include box_sizing;
 }
 
@@ -406,6 +406,11 @@ aside {
 
 
 //* Herbs Search *//
+
+#firstresult {
+  font-size: 1.1em;
+}
+
 #herbSearch {
   margin-left: -130px;
   margin-right: -130px;
