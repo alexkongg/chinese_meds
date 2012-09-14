@@ -5,17 +5,19 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <link rel="stylesheet/less" type="text/css" href="styles.less">
-	  <script src="less.js" type="text/javascript"></script>
+    <script src="less.js" type="text/javascript"></script>
     
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>    
     
     <meta http-equiv="Content-Language" content = "EN">
     <meta name="description" content="Online authority on Chinese traditional medicine, fundamental herbs, therapy, moxibustion, acupuncture, cupping, herbs, teas, extracts, and health supplements.">
-  	<meta name="keywords" content="chinese medicine, traditional chinese medicine, herbs, extracts, teas, health supplements, database, academic, moxibustion, cupping, food therapy, scientific studies, acupuncture, TCM, fundamental herbs">
-  	<meta name="classification" content="Chinese medicine, herbs, herbal tea, tea, extracts, health supplements, moxibustion, cupping, food therapy, scientific studies, TCM, traditional chinese medicine, acupuncture, fundamental herbs">
-  	
-  	
+    <meta name="keywords" content="chinese medicine, traditional chinese medicine, herbs, extracts, teas, health supplements, database, academic, moxibustion, cupping, food therapy, scientific studies, acupuncture, TCM, fundamental herbs">
+    <meta name="classification" content="Chinese medicine, herbs, herbal tea, tea, extracts, health supplements, moxibustion, cupping, food therapy, scientific studies, TCM, traditional chinese medicine, acupuncture, fundamental herbs">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-responsive.css"></link> 
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -34,7 +36,7 @@
     <%= render 'layouts/header' %>
     
     <div class="container" id="main-body">
-   	  <% flash.each do |key, value| %>
+      <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>

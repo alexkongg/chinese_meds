@@ -3,7 +3,7 @@
     <div class="container">
       <%= link_to "Chinese-Meds", '/', id: "logo" %>
       <nav>
-     
+      	
 	        <ul class="nav nav-pills pull-right" id="headertabs">
 	        	<li class="divider-vertical"></li>
 	          	<li><%= link_to "50+ Fundamental Herbs", herbs_path %><li class="divider-vertical"></li>
@@ -13,9 +13,9 @@
 	            <li><%= link_to "Moxibustion", moxibustions_path %></li><li class="divider-vertical"></li>
 	            <li><%= link_to "Acupuncture", acupunctures_path %></li><li class="divider-vertical"></li>
 	            <li><%= link_to "Cupping", cuppings_path %></li><li class="divider-vertical"></li>
-	            
-	            
-	            
+
+
+
 	            <% if signed_in? %>
 	          	<li class = "dropdown">
 	          		<a class = "dropdown-toggle" data-toggle="dropdown" href='#'>
@@ -29,10 +29,9 @@
 	               </ul>
 	            </li>
 	          <% end %>
-	            
+
             	
         	</ul>
-
         
       </nav>
     </div>
