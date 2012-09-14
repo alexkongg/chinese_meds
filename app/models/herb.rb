@@ -40,6 +40,8 @@ class Herb < ActiveRecord::Base
     text :rendered_chemical_composition
 
     
+
+    
    end
   
   private

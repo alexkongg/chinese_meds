@@ -110,6 +110,20 @@ p {
 }
 
 
+.message {
+  font-family: 'JournalRegular';
+  font-size: 4.0em;
+  text-align: center;
+}
+
+.smallmessage {
+  font-family: 'JournalRegular';
+  font-size: 3.3em;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* home */
 
 #homeContent {
@@ -268,7 +282,7 @@ input, textarea, select, .uneditable-input {
   textfield {
     height: 30px;
   }
-  width: 200px;
+  width: 300px;
 }
 
 
@@ -365,6 +379,16 @@ aside {
 }
 
 
+//* Herbs Search *//
+#herbSearch {
+  margin-left: -130px;
+  margin-right: -130px;
+  padding-bottom: 30px;
+}
+#herbSearchSmall {
+  padding-top: 20px;
+}
+
 //* Traditional Chinese Medicine *//
 
 .TCMmain {
@@ -389,5 +413,12 @@ aside {
   font-size: 1.5em;
   line-height: 1.4em;
   padding-bottom: 25px;
+}
+
+
+//* Breadcrumb *//
+
+.breadcrumb {
+  margin-top: 40px;
 }
 
