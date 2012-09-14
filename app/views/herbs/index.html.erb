@@ -6,12 +6,12 @@
 	
 	<div class="span10" id="allHerbs">
 		<%= will_paginate %>
-		<%= form_tag search_path, :method => :get do %>
+		<%= form_tag herbs_path, :method => :get do %>
 			<p>
 				<div class="searchbox">
-					<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead" %>
+					<%= text_field_tag :search, params[:search] %>
 				</div>
-				<%= submit_tag "Try searching for an Herb!", :class => 'btn', :name => nil %>
+				<%= submit_tag "Find a Different Herb", :name => nil %>
 			</p>
 		<% end %>
 		
@@ -32,7 +32,7 @@
 					    
 
 					    <br><br>
-				    	<div class="overview"><%= raw truncate(herb.rendered_overview, :length => 400) %></div>
+				    	<div class="overview"><%= raw herb.rendered_overview %></div>
 				    	<br>
 				 		<% if signed_in? %>
 					    	<div class="btn-group">
@@ -51,7 +51,7 @@
 				   		
 				    	<% end %>
 			    	</li>
-			    	
+			    	<br>
 			    <% end %>
 			</ul>
 		
