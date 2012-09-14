@@ -1,7 +1,27 @@
 @import "bootstrap";
 
-$grayMediumLight: #eaeaea;
+// Grays
+// -------------------------
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #eee;
+$white:                 #fff;
+$grayMediumLight:       #eaeaea;
 
+
+// Accent colors
+// -------------------------
+$blue:                  #049cdb;
+$blueDark:              #0064cd;
+$green:                 #46a546;
+$red:                   #9d261d;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -50,7 +70,7 @@ textarea {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
   margin: 0;
   padding: 0;
   background-color: #FBFBFB;
@@ -58,7 +78,7 @@ body {
 }
 
 #main-body {
-  padding-top: 140px;
+  padding-top: 100px;
   font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -122,6 +142,7 @@ p {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  line-height: 1.2;
 }
 
 /* home */
@@ -173,42 +194,45 @@ footer {
 /* header */
 
 header {
-  background-color: #03507B;
-  color: #333333;
-  padding: 4px 100px;
+  
   font-family: Tahoma, Geneva, sans-serif;
-  border-bottom: solid 5px #00395A;
 }
 
 .navbar-inner {
-  border: solid 1px black;
+  border-bottom: 1px solid #CACACA;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0px 10px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(top, rgba(44, 44, 44, 0.8), rgba(107, 107, 107, 0.55));
+  background-image: -o-linear-gradient(top, white, #E61111);
+  background-image: linear-gradient(to bottom, white, #632323);
+  background-repeat: repeat-x;
+  font-size: 1.1em;
+  
 }
 
 #logo {
   float: left;
   font-family: 'JournalRegular';
   margin-right: 10px;
-  font-size: 2em;
+  padding-left: 15px;
+  font-size: 2.3em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 6px;
   font-weight: bold;
   line-height: 1;
 }
 
 #logo:hover {
-  color: #fff;
+  color: $grayLight;
   text-decoration: none;
 }
 
 #headertabs {
-  font-size: .9em;
+  padding-top: 5px;
+  color: $grayDark;
 }
 
-#navBar {
-  background-color: #d59859;
-}
 
 .second-header {
   margin: auto;
@@ -216,6 +240,7 @@ header {
 }
 
 .subnav-fixed {
+  margin-top: -60px;
   position: fixed;
   padding-top: 5px;
   top: 102px;
@@ -250,6 +275,7 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
+  
   @include box_sizing;
 }
 
@@ -267,7 +293,7 @@ input, textarea, select, .uneditable-input {
  }
 
  #form-body {
-  padding-top: 60px;
+  padding-top: 30px;
 
 
  }

@@ -64,5 +64,3 @@ module ChineseMeds
     config.assets.version = '1.0'
   end
 end
-
-Sunspot.config.pagination.default_per_page = 5
