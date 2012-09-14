@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'sass-rails', '~> 3.1'
-gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'bootstrap-will_paginate'
@@ -13,6 +11,8 @@ gem 'paper_trail' # Have not implemented yet
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'sunspot_rails'
+gem 'sass-rails'
+gem 'bootstrap-sass', '~> 2.1.0.0'
 
 group :development do
   gem 'sqlite3', '1.3.5'
