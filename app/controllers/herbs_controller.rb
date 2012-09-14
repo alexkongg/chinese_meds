@@ -9,7 +9,6 @@ class HerbsController < ApplicationController
   def index
     @search = Herb.search do
       fulltext params[:search]
-      
     end
     @herbs = @search.results
     
