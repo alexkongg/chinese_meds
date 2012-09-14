@@ -5,13 +5,24 @@ class HerbsController < ApplicationController
   # GET /herbs
   # GET /herbs.json
   
-  
-  def index
+  def search
     @search = Herb.search do
       fulltext params[:search]
       
     end
     @herbs = @search.results
+    @first = @herbs.pop
+    
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @herbs }
+    end
+  end
+
+
+  def index
+    @herbs = Herb.paginate(page: params[:page])
     
 
     respond_to do |format|

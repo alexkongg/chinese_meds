@@ -2,15 +2,16 @@
 	<div class="span10 offset1">
 		<div class="well well-large">
 			<div id="searchhelp">
-			Search for an herb or related keywords and find the most relevant herbs in Traditional Chinese Medicine!
+
+			<i class="icon-search"></i> Search for an herb or related keywords and find the most relevant herbs in Traditional Chinese Medicine!
 			</div>
-			<%= form_tag herbs_path, :method => :get do %>
+			<%= form_tag search_path, :method => :get do %>
 			<br>
 
 			<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead" %>
 
 
-			<%= submit_tag "Find me an Herb!", :name => nil %>
+			<%= submit_tag "Find me an Herb!", :class => 'btn', :name => nil %>
 			
 			<% end %>
 

@@ -16,7 +16,7 @@ ChineseMeds::Application.routes.draw do
   match '/signup',                       to: "admins#new"
   match '/signin',                       to: "sessions#new"
   match '/signout',                      to: "sessions#destroy", via: :delete
-
+  match '/search',                       to: "herbs#search"
   match '/traditional-chinese-medicine', to: "tcms#index"
   match '/about',                        to: "static_pages#about"
 
