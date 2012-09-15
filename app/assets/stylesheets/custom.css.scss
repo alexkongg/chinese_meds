@@ -200,11 +200,12 @@ header {
 .navbar-inner {
   border-bottom: 1px solid #CACACA;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0px 10px rgba(0, 0, 0, 0.1);
-  background-image: -webkit-linear-gradient(top, rgba(219, 219, 219, 0.8), rgba(143, 145, 150, 0.55));
+  background-image: -webkit-linear-gradient(top, rgba(223, 223, 223, 0.8), rgba(255, 255, 255, 0.55));
   background-image: -o-linear-gradient(top, white, #E61111);
   background-image: linear-gradient(to bottom, white, #632323);
   background-repeat: repeat-x;
-  font-size: 1.1em;
+  font-size: 1em;
+  height: 70px;
   
 }
 
@@ -213,7 +214,7 @@ header {
   font-family: 'JournalRegular';
   margin-right: 10px;
   padding-left: 15px;
-  font-size: 2.3em;
+  font-size: 2.1em;
   color: $grayDarker;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -228,7 +229,7 @@ header {
 }
 
 #headertabs {
-  padding-top: 5px;
+  padding-top: 30px;
   color: $grayDark;
 }
 
@@ -241,7 +242,7 @@ header {
 .subnav-fixed {
   margin-top: -60px;
   position: fixed;
-  padding-top: 5px;
+  padding-top: 30px;
   top: 102px;
   left:0;
   right:0;
