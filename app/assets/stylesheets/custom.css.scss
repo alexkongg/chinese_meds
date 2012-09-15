@@ -1,5 +1,4 @@
 @import "bootstrap";
-
 // Grays
 // -------------------------
 $black:                 #000;
@@ -452,6 +451,7 @@ aside {
 
 
 .breadcrumb {
+  border: 1px solid #DDD;
   padding: 8px 15px;
   margin: 0 0 20px;
   margin-top: 40px;
