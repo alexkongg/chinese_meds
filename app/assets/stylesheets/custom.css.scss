@@ -133,6 +133,7 @@ p {
   font-family: 'JournalRegular';
   font-size: 4.0em;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .smallmessage {
@@ -143,6 +144,18 @@ p {
   padding-bottom: 20px;
   line-height: 1.2;
 }
+
+.banner {
+  font-family: 'JournalRegular';
+  text-align: right;
+  margin-top: -80px;
+  font-size: 2em;
+  a {
+    -webkit-transition: all .2s linear;
+  }
+
+}
+
 
 /* home */
 
@@ -165,12 +178,15 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
 
+
   a {
     color: $gray;
     
+    -webkit-transition: all .2s linear;
+    
 
     &:hover { 
-      color: $grayDarker;
+      color: $black;
     }
   }
 
@@ -221,16 +237,26 @@ header {
   padding-top: 6px;
   font-weight: bold;
   line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+  -webkit-transition: all .25s linear;
 }
 
 #logo:hover {
-  color: $grayLight;
+  color: #08C;
   text-decoration: none;
 }
 
 #headertabs {
-  padding-top: 30px;
+  text-align: right;
+  padding-top: 20px;
+  margin-left: -30px;
   color: $grayDark;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .1), 0 0 30px rgba(255, 255, 255, .125);
+  -webkit-transition: all .2s linear;
+}
+
+#headertabs > a:hover {
+  color: $black;
 }
 
 

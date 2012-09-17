@@ -11,29 +11,17 @@
    	    		<span class="icon-bar"></span>
      			</a>
 	        	
-	          	<li><%= link_to "50+ Fundamental Herbs", herbs_path %>
+	          	<li><%= link_to "Fundamental Herbs", herbs_path %>
 	            <li><a href='/traditional-chinese-medicine' >Traditional CM</a></li>
 	            <li><%= link_to "Scientific Studies", scientific_studies_path %></li>
 	            <li><%= link_to "Food Therapy", food_therapies_path %></li>
 	            <li><%= link_to "Moxibustion", moxibustions_path %></li>
 	            <li><%= link_to "Acupuncture", acupunctures_path %></li>
 	            <li><%= link_to "Cupping", cuppings_path %></li>
+	            <li><a href="http://www.apothecary1884.com">Apothecary</a></li>
 	            
 	            
 	            
-	            <% if signed_in? %>
-	          	<li class = "dropdown">
-	          		<a class = "dropdown-toggle" data-toggle="dropdown" href='#'>
-	          		Ad.<b class="caret"></b>
-	          		</a>
-	          		<ul class="dropdown-menu">
-	          			<li><%= link_to "New Herb", new_herb_path%></li>
-	                	<li><%= link_to "Settings", edit_admin_path(current_admin) %> </li>
-	          			<li class="divider"></li>
-	                	<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-	               </ul>
-	            </li>
-	          <% end %>
 	            
             	
         	</ul>

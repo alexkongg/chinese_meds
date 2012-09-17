@@ -2,6 +2,7 @@
 
 
 <div class="row">
+
 	<% if @first.nil? %>
 	<div class="message">
 	<h2><%= pluralize(@herbs.count, "match") %> found.</h2>
@@ -11,6 +12,7 @@
 	<div class="message">
 	<h2><%= pluralize(@herbs.count + 1, "match") %> found.</h2>
 	</div>
+	<h3 class="banner">( Check out the <a href="http://www.apothecary1884.com">Shop</a>! )</h3>
 </div>
 
 <div class="row" id="herbSearch">
