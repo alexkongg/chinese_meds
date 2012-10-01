@@ -72,13 +72,18 @@ body {
   padding-top: 20px;
   margin: 0;
   padding: 0;
-  background-color: #FBFBFB;
+  
+  background-image: url("mainbackground.png");
   
 }
 
 #main-body {
+  padding-right: 70px;
+  padding-left: 70px;
+  background-color: white;
   padding-top: 100px;
   font-family: Tahoma, Geneva, sans-serif;
+  border: solid 2px $grayDarker;
 }
 
 /* buttons */
@@ -231,7 +236,7 @@ header {
   margin-right: 10px;
   padding-left: 15px;
   font-size: 2.1em;
-  color: $grayDarker;
+  color: #47A5B8;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 6px;
@@ -242,7 +247,7 @@ header {
 }
 
 #logo:hover {
-  color: #08C;
+  color: $grayDarker;
   text-decoration: none;
 }
 
