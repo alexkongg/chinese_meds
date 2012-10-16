@@ -12,6 +12,9 @@ class HerbsController < ApplicationController
     end
     @herbs = @search.results
     @first = @herbs.pop
+    @second = @herbs.pop
+    @third = @herbs.pop
+    
     
 
     respond_to do |format|

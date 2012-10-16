@@ -1,0 +1,84 @@
+-herbs.each do |herb|
+  .row#subsequent_rows
+    .span4
+      %h3
+        = link_to herb.name, herb_path(herb)
+      %p
+        - unless herb.common_name.blank?
+          %b 
+            Common Name: 
+          %i
+            = herb.common_name
+      %p
+        - unless herb.chinese_name.blank?
+          %b 
+            Chinese Name: 
+          %i
+            = herb.chinese_name
+      %p
+        = raw truncate(herb.rendered_overview, :length => 350)
+      - if signed_in?
+        .btn-group
+          %button.btn
+            %i.icon-edit
+            = link_to 'Edit', edit_herb_path(herb)
+          %button.btn
+            %i.icon-trash
+            = link_to 'Destroy', herb, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete
+    - herb = herbs.pop
+    .span4
+      %h3
+        = link_to herb.name, herb_path(herb)
+      %p
+        - unless herb.common_name.blank?
+          %b 
+            Common Name: 
+          %i
+            = herb.common_name
+      %p
+        - unless herb.chinese_name.blank?
+          %b 
+            Chinese Name: 
+          %i
+            = herb.chinese_name
+      %p
+        = raw truncate(herb.rendered_overview, :length => 350)
+      - if signed_in?
+        .btn-group
+          %button.btn
+            %i.icon-edit
+            = link_to 'Edit', edit_herb_path(herb)
+          %button.btn
+            %i.icon-trash
+            = link_to 'Destroy', herb, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete
+            
+            
+    - herb = herbs.pop
+    .span4
+      %h3
+        = link_to herb.name, herb_path(herb)
+      %p
+        - unless herb.common_name.blank?
+          %b 
+            Common Name: 
+          %i
+            = herb.common_name
+      %p
+        - unless herb.chinese_name.blank?
+          %b 
+            Chinese Name: 
+          %i
+            = herb.chinese_name
+      %p
+        = raw truncate(herb.rendered_overview, :length => 350)
+      - if signed_in?
+        .btn-group
+          %button.btn
+            %i.icon-edit
+            = link_to 'Edit', edit_herb_path(herb)
+          %button.btn
+            %i.icon-trash
+            = link_to 'Destroy', herb, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete
+
+    
+    

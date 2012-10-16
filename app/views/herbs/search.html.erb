@@ -15,7 +15,7 @@
 	<h3 class="banner">( Check out the <a href="http://www.apothecary1884.com">Shop</a>! )</h3>
 </div>
 
-<div class="row" id="herbSearch">
+<div class="row" id="first_row">
 	<div class="span7" id="firstresult">
 		<div class="well well-large">
 			
@@ -54,36 +54,39 @@
 		</div>
 	</div>
 	<% end %>
-	<% @herbs.each do |herb| %>
-
-	<div class="span3" id="herbSearchSmall">
+	
+	
+	
+	
+	<% unless @second.nil? %>
+	<div class="span4" id="herbSearchSmall">
 		
 		
-			<h3><%= link_to herb.name, herb_path(herb) %></h3>
+			<h3><%= link_to @second.name, herb_path(@second) %></h3>
 			<p>
-				<% unless herb.common_name.blank? %>
-					<b>Common Name: </b><i><%= herb.common_name %></i>
+				<% unless @second.common_name.blank? %>
+					<b>Common Name: </b><i><%= @second.common_name %></i>
 				<% end %>
 			</p>
 			<p>
-				<% unless herb.chinese_name.blank? %>
-					<b>Chinese Name: </b><i><%= herb.chinese_name %></i>
+				<% unless @second.chinese_name.blank? %>
+					<b>Chinese Name: </b><i><%= @second.chinese_name %></i>
 				<% end %>
 			</p>
 			<p>
-				<%= raw truncate(herb.rendered_overview, :length => 285) %>
+				<%= raw truncate(@second.rendered_overview, :length => 350) %>
 			</p>
 			<% if signed_in? %>
 				<div class="btn-group">
 					    		
 					<button class="btn">
 						<i class="icon-edit"></i> 
-						<%= link_to 'Edit', edit_herb_path(herb) %> 
+						<%= link_to 'Edit', edit_herb_path(@second) %> 
 					</button>
 						   		
 					<button class="btn">
 						<i class="icon-trash"></i> 
-						<%= link_to 'Destroy', herb, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete %> 
+						<%= link_to 'Destroy', @second, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete %> 
 					</button>
 				</div>
 					    	
@@ -92,8 +95,48 @@
 	</div>
 	<% end %>
 	
+	
+	
+	<% unless @third.nil? %>
+	<div class="span4" id="herbSearchSmall">
+		
+		
+			<h3><%= link_to @third.name, herb_path(@third) %></h3>
+			<p>
+				<% unless @third.common_name.blank? %>
+					<b>Common Name: </b><i><%= @third.common_name %></i>
+				<% end %>
+			</p>
+			<p>
+				<% unless @third.chinese_name.blank? %>
+					<b>Chinese Name: </b><i><%= @third.chinese_name %></i>
+				<% end %>
+			</p>
+			<p>
+				<%= raw truncate(@third.rendered_overview, :length => 350) %>
+			</p>
+			<% if signed_in? %>
+				<div class="btn-group">
+					    		
+					<button class="btn">
+						<i class="icon-edit"></i> 
+						<%= link_to 'Edit', edit_herb_path(@third) %> 
+					</button>
+						   		
+					<button class="btn">
+						<i class="icon-trash"></i> 
+						<%= link_to 'Destroy', @third, confirm: 'Deleting the herb will permanently remove it from the vault. Are you sure?', method: :delete %> 
+					</button>
+				</div>
+					    	
+			<% end %>
+		
+	</div>
+	
+	<% end %>
 </div>
-
+	
+<%= render 'herb_display_row', :herbs => @herbs %>
 
 <div class="row">
 	<div class="span6 offset3">

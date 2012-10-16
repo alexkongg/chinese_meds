@@ -438,18 +438,25 @@ aside {
 
 //* Herbs Search *//
 
-#firstresult {
-  font-size: 1.1em;
-}
 
-#herbSearch {
+
+#first_row {
+
+  #firstresult {
+    font-size: 1.1em;
+  }
   margin-left: -130px;
   margin-right: -130px;
+  border-bottom: 1px solid $grayLighter;
   padding-bottom: 30px;
 }
-#herbSearchSmall {
-  padding-top: 20px;
+
+#subsequent_rows {
+  border-bottom: 1px solid $grayLighter;
+  padding-bottom: 30px;
+
 }
+
 
 //* Traditional Chinese Medicine *//
 

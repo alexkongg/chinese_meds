@@ -14,6 +14,7 @@ gem 'paper_trail' # Have not implemented yet
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'sunspot_rails'
+gem 'haml'
 
 
 
