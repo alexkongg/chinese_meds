@@ -10,7 +10,7 @@
       = form_tag search_path, :method => :get do
         
         %i.icon-search#searchicon
-        = select_tag :search, options_for_select(Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
+        = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
         = submit_tag "Select Herb", :class => 'btn'
 .row
   .span10.offset1
