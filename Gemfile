@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'redcarpet'
 gem 'sunspot_rails'
 gem 'haml'
+gem "twitter-bootstrap-rails"
 
 
 
@@ -34,7 +35,6 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem "therubyracer"
   gem "less" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
 end
 
 group :production do
