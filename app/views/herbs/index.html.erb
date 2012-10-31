@@ -9,9 +9,12 @@
 		<%= form_tag search_path, :method => :get do %>
 			<p>
 				<div class="searchbox">
-					<%= text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", "data-provide" => "typeahead" %>
+					<%= select_tag :search, options_for_select([""] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb!" %>
 				</div>
-				<%= submit_tag "Try searching for an Herb!", :class => 'btn', :name => nil %>
+				<div>
+				  <br>
+				<%= submit_tag "Select an herb!", :class => 'btn', :name => nil %>
+				</div>
 			</p>
 		<% end %>
 		
