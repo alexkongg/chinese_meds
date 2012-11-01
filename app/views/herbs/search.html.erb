@@ -15,8 +15,8 @@
 	<h3 class="banner">( Check out the <a href="http://www.apothecary1884.com">Shop</a>! )</h3>
 </div>
 
-<div class="row" id="first_row">
-	<div class="span7" id="firstresult">
+<div class="row">
+	<div class="span6" id="firstresult">
 		<div class="well well-large">
 			
 			<h3><%= link_to @first.name, herb_path(@first) %></h3>
@@ -59,7 +59,7 @@
 	
 	
 	<% unless @second.nil? %>
-	<div class="span4" id="herbSearchSmall">
+	<div class="span3" id="herbSearchSmall">
 		
 		
 			<h3><%= link_to @second.name, herb_path(@second) %></h3>
@@ -98,7 +98,7 @@
 	
 	
 	<% unless @third.nil? %>
-	<div class="span4" id="herbSearchSmall">
+	<div class="span3" id="herbSearchSmall">
 		
 		
 			<h3><%= link_to @third.name, herb_path(@third) %></h3>
