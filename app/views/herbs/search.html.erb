@@ -1,7 +1,7 @@
 <% provide(:title, 'Find Herbs')%>
 
 
-<div class="row">
+<div class="row-fluid">
 
 	<% if @first.nil? %>
 	<div class="message">
@@ -15,7 +15,7 @@
 	<h3 class="banner">( Check out the <a href="http://www.apothecary1884.com">Shop</a>! )</h3>
 </div>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="span6" id="firstresult">
 		<div class="well well-large">
 			
@@ -138,7 +138,7 @@
 	
 <%= render 'herb_display_row', :herbs => @herbs %>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="span6 offset3">
 		<div class="smallmessage">
 			Not what you're looking for? 
@@ -146,7 +146,7 @@
 	</div>
 </div>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="span4 offset4">
 	<%= form_tag search_path, :method => :get do %>
 			<p>
@@ -157,7 +157,7 @@
 			</p>
 	</div>
 </div>
-<div class="row">
+<div class="row-fluid">
 	<div class="span4 offset4">
 				<div class="btn-group">
 				<%= submit_tag "Find a Different Herb!", :class => 'btn', :name => nil %>
