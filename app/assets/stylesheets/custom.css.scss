@@ -52,7 +52,6 @@ html {
 section {
   overflow: auto;
   padding: 120px;
-  border: 1px solid #bbb;
   background-color: #fff;
 }
 
@@ -69,14 +68,13 @@ textarea {
 
 body {
   font-family: Tahoma, Geneva, sans-serif;
-  padding-top: 80px;
-  margin: 0;
   
 }
 
 #main-body {
+  padding-top: 40px;
   background-color: white;
-  // border: solid 2px $grayDarker;
+  
 }
 
 /* buttons */
@@ -162,6 +160,22 @@ p {
   background-color: #fff;
   
   
+  
+}
+
+#mainIntro {
+  background-color: transparent;
+  border: none;
+
+}
+
+#mainDescription {
+  &:hover { 
+    color: white;
+    -webkit-transition: all .3s linear;
+    
+    }
+
 }
 
 #mainLogo {
@@ -173,7 +187,12 @@ p {
 #homeRow1 {
   input, textarea, select, .uneditable-input {
     width: 80%;
-}
+  }
+  background-image:url('background.jpg');
+  margin-right: -30px;
+  margin-bottom: -50px;
+  color: $grayLighter;
+  
 }
 
 #searchhelp {
@@ -452,7 +471,7 @@ aside {
   text-shadow: 0 1px 0 #ffffff;
 }
 .breadcrumb .divider {
-  padding: 0 5px;
+  padding: 5px;
   color: #ccc;
 }
 .breadcrumb .active {

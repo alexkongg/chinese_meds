@@ -1,22 +1,26 @@
 .row#homeRow1
+  %br
+  %br
+  %br
   .span11.offset1
-    .well.well-large
-      .smallmessage
+    .well.well-large#mainIntro
+      .smallmessage#mainDescription
         Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
-      .span4
+      .span5
         %br
         = form_tag search_path, :method => :get, :class =>'form_search' do
           %br
           = text_field_tag :search, params[:search], "placeholder" => "Keyword search: E.g. Maitake, or Diabetes", :class=>"search-query"
           = submit_tag "Search for a keyword, or", :class => 'btn'
-      .span4
+      .span5
         %br
         = form_tag search_path, :method => :get do
           %br
           = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
           = submit_tag "Select Herb", :class => 'btn'
 
-.row
+.row-fluid
+  %br
   %br
   %br
   %ul.breadcrumb
