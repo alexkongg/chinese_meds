@@ -15,6 +15,9 @@
   	<meta name="keywords" content="chinese medicine, traditional chinese medicine, herbs, extracts, teas, health supplements, database, academic, moxibustion, cupping, food therapy, scientific studies, acupuncture, TCM, fundamental herbs">
   	<meta name="classification" content="Chinese medicine, herbs, herbal tea, tea, extracts, health supplements, moxibustion, cupping, food therapy, scientific studies, TCM, traditional chinese medicine, acupuncture, fundamental herbs">
   	
+  	
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="assets/stylesheets/bootstrap-responsive.css"></link> 
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -32,7 +35,7 @@
   <body data-spy="scroll" data-target=".subnav">
     <%= render 'layouts/header' %>
     
-    <div class="container" id="main-body">
+    <div class="container-fluid" id="main-body">
    	  <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
