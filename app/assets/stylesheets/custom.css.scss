@@ -178,6 +178,10 @@ p {
 
 }
 
+#mainSelect {
+  color: black;
+}
+
 #mainLogo {
   float: left;
   margin-bottom: -190px;
@@ -185,8 +189,8 @@ p {
 }
 
 #homeRow1 {
-  input, textarea, select, .uneditable-input {
-    width: 80%;
+  textarea, select, .uneditable-input {
+    width: 60%;
   }
   background-image:url('background.jpg');
   margin-right: -30px;

@@ -10,14 +10,14 @@
         %br
         = form_tag search_path, :method => :get, :class =>'form_search' do
           %br
-          = text_field_tag :search, params[:search], "placeholder" => "Keyword search: E.g. Maitake, or Diabetes", :class=>"search-query"
-          = submit_tag "Search for a keyword, or", :class => 'btn'
-      .span5
+          = text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", :class=>"search-query"
+          = submit_tag "Keyword search", :class => 'btn'
+      .span5#mainSelect
         %br
         = form_tag search_path, :method => :get do
           %br
-          = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
-          = submit_tag "Select Herb", :class => 'btn'
+          = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb..."
+          = submit_tag "View Herb", :class => 'btn'
 
 .row-fluid
   %br
@@ -27,5 +27,5 @@
     %li.active
       %a
         %i.icon-home
-        Chinese-Meds Home
+        Chinese-Meds.com Home
                 

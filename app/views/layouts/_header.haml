@@ -1,0 +1,22 @@
+%header.navbar.navbar-fixed-top
+  .navbar-inner#mainheader
+    =link_to "Chinese-Meds", root_path, id: "logo"
+    .container-fluid
+      %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"}
+        %span.icon_bar
+        %span.icon_bar
+        %span.icon_bar
+      .nav-collapse.collapse
+        %ul.nav.nav-pills.pull-right#headertabs
+          %li=link_to "Fundamental Herbs", herbs_path
+          %li
+            %a{:href=>'/traditional-chinese-medicine'}
+              Traditional CM
+          %li=link_to "Scientific Studies", scientific_studies_path
+          %li=link_to "Food Therapy", food_therapies_path
+          %li=link_to "Moxibustion", moxibustions_path
+          %li=link_to "Acupuncture", acupunctures_path
+          %li=link_to "Cupping", cuppings_path
+          %li
+            %a{:href=>"http://www.apothecary1884.com"}
+              Apothecary

@@ -9,11 +9,11 @@
 		<%= form_tag search_path, :method => :get do %>
 			<p>
 				<div class="searchbox">
-					<%= select_tag :search, options_for_select([""] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb!" %>
+					<%= select_tag :search, options_for_select([""] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb..." %>
 				</div>
 				<div>
 				  <br>
-				<%= submit_tag "Select an herb!", :class => 'btn', :name => nil %>
+				<%= submit_tag "View Herb", :class => 'btn', :name => nil %>
 				</div>
 			</p>
 		<% end %>
@@ -73,7 +73,7 @@
 	
 	<ul class="breadcrumb">
 		<li>
-			<a href='/'><i class="icon-home"></i> Chinese-Meds Home</a> <span class="divider">/</span>
+			<a href='/'><i class="icon-home"></i> Chinese-Meds.com Home</a> <span class="divider">/</span>
 		</li>
 		<li class="active">
 			<i class="icon-book"></i> All Herbs
