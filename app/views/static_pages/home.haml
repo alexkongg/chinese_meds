@@ -3,21 +3,18 @@
     .well.well-large
       .smallmessage
         Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
-      = form_tag search_path, :method => :get do
+      .span4
         %br
-        = text_field_tag :search, params[:search], "placeholder" => "Keyword search: E.g. Maitake, or Diabetes"
-        = submit_tag "Search for a keyword, or", :class => 'btn'
-      = form_tag search_path, :method => :get do
-        
-        %i.icon-search#searchicon
-        = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
-        = submit_tag "Select Herb", :class => 'btn'
-.row
-  .span10.offset1
-    .center.hero-unit#homeContent
-      = image_tag("chinesemeds.jpeg", alt: "ChineseMeds")
-      %h2
-        contains articles and citations on traditional Chinese medicine, the 50 Fundamental Herbs, extracts, teas, health supplements, and more.
+        = form_tag search_path, :method => :get, :class =>'form_search' do
+          %br
+          = text_field_tag :search, params[:search], "placeholder" => "Keyword search: E.g. Maitake, or Diabetes", :class=>"search-query"
+          = submit_tag "Search for a keyword, or", :class => 'btn'
+      .span4
+        %br
+        = form_tag search_path, :method => :get do
+          %br
+          = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Or Select an Herb!"
+          = submit_tag "Select Herb", :class => 'btn'
 
 .row
   %br
