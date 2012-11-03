@@ -14,7 +14,7 @@ gem 'redcarpet'
 gem 'sunspot_rails'
 gem 'haml'
 gem "twitter-bootstrap-rails"
-
+gem "less"
 
 
 group :development do
