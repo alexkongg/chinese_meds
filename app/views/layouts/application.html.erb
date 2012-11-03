@@ -34,8 +34,11 @@
   </head>
   <body data-spy="scroll" data-target=".subnav">
     <%= render 'layouts/header' %>
-    
+    <% if current_page?(root_path) %>
+    <div class="container-fluid home" id="main-body">
+    <% else %>
     <div class="container-fluid" id="main-body">
+    <% end %>
    	  <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>

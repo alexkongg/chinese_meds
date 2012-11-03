@@ -1,13 +1,13 @@
 %header.navbar.navbar-fixed-top
   .navbar-inner#mainheader
-    =link_to "Chinese-Meds", root_path, id: "logo"
     .container-fluid
       %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"}
         %span.icon_bar
         %span.icon_bar
         %span.icon_bar
       .nav-collapse.collapse
-        %ul.nav.nav-pills.pull-right#headertabs
+        %ul.nav.nav-pills.pull-left#headertabs
+          %li=link_to "Home", root_path
           %li=link_to "Fundamental Herbs", herbs_path
           %li
             %a{:href=>'/traditional-chinese-medicine'}

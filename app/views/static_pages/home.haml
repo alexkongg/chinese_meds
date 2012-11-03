@@ -1,31 +1,30 @@
-.row#homeRow1
-  %br
-  %br
-  %br
-  .span11.offset1
-    .well.well-large#mainIntro
-      .smallmessage#mainDescription
-        Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
-      .span5
-        %br
-        = form_tag search_path, :method => :get, :class =>'form_search' do
-          %br
-          = text_field_tag :search, params[:search], "placeholder" => "E.g. Maitake, or Diabetes", :class=>"search-query"
-          = submit_tag "Keyword search", :class => 'btn'
-      .span5#mainSelect
-        %br
-        = form_tag search_path, :method => :get do
-          %br
-          = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb..."
-          = submit_tag "View Herb", :class => 'btn'
+.homeContent
+  .row#homeRow1
+    %br
+    %br
+    %br
+    .span11.offset1
+      #mainIntro
+        %h1#logo
+          Chinese-Meds
+      
+        .row-fluid
+          .span6.smallmessage#mainDescription
+            Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
+        .row-fluid
+          %button.btn#Browse{:type=>"button"}
+            Browse our Catalogue
+        .row-fluid
+      
+          =render 'searchboxes'
 
-.row-fluid
-  %br
-  %br
-  %br
-  %ul.breadcrumb
-    %li.active
-      %a
-        %i.icon-home
-        Chinese-Meds.com Home
+  .row-fluid
+    %br
+    %br
+    %br
+    %ul.breadcrumb
+      %li.active
+        %a
+          %i.icon-home
+          Chinese-Meds.com Home
                 
