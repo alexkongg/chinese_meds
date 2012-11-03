@@ -14,7 +14,7 @@ gem 'redcarpet'
 gem 'sunspot_rails'
 gem 'haml'
 gem "twitter-bootstrap-rails"
-gem "less"
+gem "less-rails"
 
 
 group :development do
@@ -32,7 +32,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem "therubyracer"
-  gem "less" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 end
 
 group :production do
