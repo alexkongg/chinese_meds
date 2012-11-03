@@ -1,30 +1,24 @@
-.homeContent
-  .row#homeRow1
-    %br
-    %br
-    %br
-    .span11.offset1
-      #mainIntro
-        %h1#logo
-          Chinese-Meds
-      
-        .row-fluid
-          .span6.smallmessage#mainDescription
-            Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
-        .row-fluid
-          %button.btn#Browse{:type=>"button"}
-            Browse our Catalogue
-        .row-fluid
-      
-          =render 'searchboxes'
+.row-fluid#homeRow1
+  %h1#logo
+    Chinese-Meds
+    
+.row-fluid
+  .span6.smallmessage#mainDescription
+    Search for an herb or other related keywords and find the most relevant commodities in Traditional Chinese Medicine!
+.row-fluid
+  %button.btn#Browse{:type=>"button"}
+    Browse our Catalogue
+.row-fluid
 
-  .row-fluid
-    %br
-    %br
-    %br
-    %ul.breadcrumb
-      %li.active
-        %a
-          %i.icon-home
-          Chinese-Meds.com Home
-                
+  =render 'searchboxes'
+
+.row-fluid
+  %br
+  %br
+  %br
+  %ul.breadcrumb
+    %li.active
+      %a
+        %i.icon-home
+        Chinese-Meds.com Home
+              

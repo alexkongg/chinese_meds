@@ -160,14 +160,6 @@ p {
 
 }
 
-.homeContent {
-  background-color: transparent;
-  
-  
-  
-  
-}
-
 #Browse {
   margin-top: 60px;
 }
@@ -179,6 +171,7 @@ p {
 
 #mainDescription {
   text-align: left;
+  color: $grayLight;
   &:hover { 
     color: white;
     -webkit-transition: all .3s linear;
@@ -194,19 +187,11 @@ p {
 }
 
 #homeRow1 {
-  textarea, select, .uneditable-input {
-    width: 60%;
-  }
-  margin-right: -30px;
-  margin-bottom: -50px;
-  color: $grayLighter;
+  padding-top:80px;
   
 }
 
-#searchhelp {
-  font-size: 1.1em;
-  line-height: 1.3;
-}
+
 
 /* footer */
 
@@ -248,12 +233,11 @@ footer {
 
 
 #logo {
+  color:white;
   font-size: 2.5em;
   text-align: left;
   text-transform: snakecase;
   -webkit-transition: all .3s linear;
-  margin-left: -60px;
-  margin-top: -30px;
   font-weight: normal;
 }
 
