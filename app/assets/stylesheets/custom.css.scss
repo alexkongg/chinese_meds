@@ -81,10 +81,13 @@ body {
   font-size: 4.5em;
 }
 
-#name {
+.name {
   font-family: 'JournalRegular';
   text-align: left;
   font-size: 3.5em;
+  a {
+    color: black;
+  }
 
 }
 
@@ -157,6 +160,16 @@ p {
   font-family: 'JournalRegular';
   text-align: right;
   margin-top: -30px;
+  font-size: 2em;
+  a {
+    -webkit-transition: all .2s linear;
+  }
+
+}
+
+.banner-index {
+  font-family: 'JournalRegular';
+  text-align: center;
   font-size: 2em;
   a {
     -webkit-transition: all .2s linear;
@@ -394,6 +407,10 @@ aside {
 
 //* Herb Index *//
 
+.alternate {
+  background-color: $grayLighter;
+}
+
 
 
 .herbs {
@@ -401,7 +418,7 @@ aside {
   margin: 0;
   li {
     overflow: auto;
-    padding: 10px 0;
+    padding: 10px;
     border-top: 1px solid $grayLighter;
     &:last-child {
       border-bottom: 1px solid $grayLighter;

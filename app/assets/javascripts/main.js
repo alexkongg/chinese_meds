@@ -17,3 +17,7 @@ $(function() {
     $('#Browse').hide(1200);
     })
 });
+
+$(document).ready(function(){
+  $('.herbs li:nth-child(odd)').addClass('alternate');
+});
