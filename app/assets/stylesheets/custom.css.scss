@@ -177,6 +177,7 @@ p {
 /* home */
 
 #logo {
+  line-height: 100%;
   color: white;
   font-size: 2.5em;
   text-align: left;
@@ -418,9 +419,14 @@ aside {
 //* Herb Form *//
 
 #formSideBar {
-  margin-top: 200px;
+  margin-top: 190px;
   font-size: 1.2em;
   background-color: $grayLighter;
+}
+
+.img-polaroid {
+  margin-top: 30px;
+  position: fixed;
 }
 
 
