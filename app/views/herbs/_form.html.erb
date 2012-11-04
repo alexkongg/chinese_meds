@@ -1,17 +1,15 @@
-<%= render 'form_header'%>
 <div id="form-body">
   <div id="form-entries">
 
   <div id="names">
   </div>
-  <h1>Herb Profile</h1>
-
-
+  <h1 class="title">Herb Profile</h1>
+  
+  <h3 class="banner-tip">
+    (Make sure to read the tips before getting started!)
+  </h3>
   <%= render 'stylemodal'%>
-  <br>
-  <br>
-  <br>
-  <br>
+  <br><br>
 
   <%= form_for(@herb) do |f| %>
 
@@ -41,7 +39,7 @@
 
     <div id="overview">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :overview, "Overview*" %><br />
@@ -51,7 +49,7 @@
 
     <div id="physicaldescription">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
     	
       <%= f.label :physical_description %><br />
@@ -61,7 +59,7 @@
 
     <div id="chemicalcomposition">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :chemical_composition %><br />
@@ -71,7 +69,7 @@
 
     <div id="medicinaldescription">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :medicinal_description %><br />
@@ -81,7 +79,7 @@
 
     <div id="precautions">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :precautions %><br />
@@ -91,7 +89,7 @@
 
     <div id="sideeffects">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :side_effects %><br />
@@ -101,7 +99,7 @@
 
     <div id="recentstudies">
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
     <div class="field">
       
       <%= f.label :recent_studies %><br />

@@ -1,11 +1,13 @@
 #mainPopUp
-  .span6#mainSelect
+  .span4#mainSelect
     %br
     = form_tag search_path, :method => :get do
       %br
       = select_tag :search, options_for_select([" "] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb..."
       = submit_tag "View Herb", :class => 'btn'
-  .span6
+  .span4#mainLinktoHerbs
+    =link_to "View All Herbs", herbs_path
+  .span4
     %br
     = form_tag search_path, :method => :get, :class =>'form_search' do
       %br

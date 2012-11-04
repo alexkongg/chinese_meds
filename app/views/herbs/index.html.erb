@@ -1,8 +1,6 @@
 <% provide(:title, 'All Herbs')%>
 
-
 <div class="row-fluid">
-	
 	
 	<div class="span12" id="allHerbs">
 		<%= will_paginate %>
@@ -11,6 +9,12 @@
 				<div class="searchbox">
 					<%= select_tag :search, options_for_select([""] + Herb.all.collect {|herb| [herb.name, herb.id]} + Herb.all.collect{|herb| [herb.common_name, herb.id]} + Herb.all.collect{|herb| [herb.chinese_name, herb.id]}), :class => 'chosen', 'data-placeholder' => "Select an Herb..." %>
 				</div>
+				<h3 class="banner">
+          (Are we missing an herb you want to see? Take the time to contribute your expertise!)
+          <div class="btn-group">
+    		    <button class="btn"><a href="/herbs/new">New Herb</a></button>
+    	    </div>
+    	  </h3>
 				<div>
 				  <br>
 				<%= submit_tag "View Herb", :class => 'btn', :name => nil %>
@@ -62,9 +66,6 @@
 		
 		
 		<%= will_paginate %>
-	<div class="btn-group">
-		<button class="btn"><a href="/herbs/new">New Herb</a></button>
-	</div>
 	<br><br>
 	</div>
 </div>

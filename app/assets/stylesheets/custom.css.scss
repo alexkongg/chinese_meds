@@ -76,6 +76,18 @@ body {
   
 }
 
+#title {
+  font-family: 'JournalRegular';
+  font-size: 4.5em;
+}
+
+#name {
+  font-family: 'JournalRegular';
+  text-align: left;
+  font-size: 3.5em;
+
+}
+
 /* buttons */
 .btn btn-large btn-primary {
   color: white;
@@ -152,6 +164,15 @@ p {
 
 }
 
+.banner-tip {
+  font-family: 'JournalRegular';
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: -28px;
+
+}
+
+
 
 /* home */
 
@@ -165,14 +186,11 @@ p {
     -webkit-transition: all .3s linear;
     }
   font-weight: bold;
+  padding: 10px;
   padding-bottom: 40px;
 }
 
 
-#logoTail {
-  color:white;
-  font-size: .4em;
-}
 
 .home {
   background-image:url('background.jpg');
@@ -192,6 +210,7 @@ p {
   text-align: left;
   color: $grayLight;
   font-size: 2.5em;
+  padding: 10px;
   &:hover { 
     color: white;
     -webkit-transition: all .3s linear;
@@ -199,10 +218,26 @@ p {
 
 }
 
+
 #mainSelect {
   color: black;
   .btn {
     margin-bottom:5px;
+  }
+}
+
+#mainLinktoHerbs{
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: -5px;
+  padding-top: 45px;
+  a {
+    color: $grayLight;
+    &:hover {
+      color: white;
+      -webkit-transition: all .25s linear;
+      underline: none;
+    }
   }
 }
 
@@ -250,7 +285,6 @@ footer {
 }
 
 /* header */
-
 
 
 /* forms */
@@ -347,12 +381,6 @@ aside {
   border-bottom: 1px solid black;
 }
 
-#herb-name {
-  text-align: left;
-  font-size: 3.5em;
-
-}
-
 #herbShow {
   
   border: 1px solid #bbb;
@@ -385,6 +413,14 @@ aside {
   background-color: white;
   border: 1px solid $grayLighter;
   padding: 30px;
+}
+
+//* Herb Form *//
+
+#formSideBar {
+  margin-top: 200px;
+  font-size: 1.2em;
+  background-color: $grayLighter;
 }
 
 
